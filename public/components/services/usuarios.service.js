@@ -27,10 +27,11 @@
     // Funcion que almacena en el localStorage todos los usuarios
     function _addUsuario(pnuevoUsuario){
       let listaUsuarios = _getUsuarios();
-      let respuesta = false; 
+      let respuesta = true; 
       listaUsuarios.push(pnuevoUsuario);
-      asyncLocalStorage.setItem('usuariosLS', listaUsuarios).then((result) =>{
-        respuesta = result;
+
+      asyncLocalStorage.setItem('usuariosLS', listaUsuarios).then((response) =>{
+        respuesta = response;
       });
 
       return respuesta;
