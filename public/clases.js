@@ -1,14 +1,29 @@
 // TODO Dentro de este archivo se crean los objetos con sus respectivos métodos
 class Cliente{
-  constructor(pCedula, pNombre1, pApellido1, pEdad){
+  constructor(pFoto, pNombre, pApellido, pCedula, pProvincia, pCanton, pDistrito, pUbicacion, pFechaNacimiento, pEdad, pGenero, pNombreUsuario, pContrasenna){
+    this.foto = pFoto;
+    this.nombre = pNombre;
+    this.apellido = pApellido;
     this.cedula = pCedula;
-    this.nombre1 = pNombre1;
-    this.apellido1 = pApellido1;
+    this.provincia = pProvincia;
+    this.canton = pCanton;
+    this.disttrito = pDistrito;
+    this.ubicacion = pUbicacion;
+    this.fechaNacimiento = pFechaNacimiento;
     this.edad = pEdad;
-    this.listaVehiculos = [];
+    this.genero = pGenero;
+    this.nombreUsuario = pNombreUsuario;
+    this.contrasenna = pContrasenna;
+    this.listaMuertos = [];
   }
-  registrarVehiculo(pVehiculo){
-    this.listaVehiculos.push(pVehiculo);
+  registrarMuerto(pMuerto){
+    this.listaMuertos.push(pMuerto);
+  }
+  obtenerNombreCompleto(){
+    return `${this.nombre} ${this.apellido}`;
+  }
+  obtenerCedula(){
+    return this.cedula;
   }
 }
 
