@@ -42,7 +42,7 @@
       console.log(pUsuario);
     }
 
-
+    // TODO este esta mal declarado
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.getUsuarios();
     }
