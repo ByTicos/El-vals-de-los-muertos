@@ -38,6 +38,10 @@
       listarUsuarios();
     }
 
+    vm.verUsuario = (pUsuario) => {
+      console.log(pUsuario);
+    }
+
 
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.getUsuarios();

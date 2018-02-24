@@ -29,6 +29,7 @@
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Edad</th>
+          <th>Boton</th>
         </tr>
     </thead>
     <tbody>
@@ -37,6 +38,9 @@
         <td>{{usuario.nombre1}}</td>
         <td>{{usuario.apellido1}}</td>
         <td>{{usuario.edad}}</td>
+        <td>
+          <button class="btn btn-warning" type="button" ng-click="vm.verUsuario(usuario)">Hola</button>
+        </td>
       </tr>
     </tbody>
   </table>
