@@ -4,7 +4,7 @@
   .module('funeraria')
   .service('servicioLogin', servicioLogin);
 
-  servicioLogin.$inject = ['$log','$http', 'servicioUsuarios','servicioSesion'];
+  servicioLogin.$inject = ['$log', '$http', 'servicioUsuarios', 'servicioSesion'];
 
   function servicioLogin($log, $http, servicioUsuarios, servicioSesion){
 
@@ -15,12 +15,12 @@
     
     function _inicioSesion(credenciales) {
       
-      let allUser = servicioUsuarios.retornarUsuario();
+      let allUser = servicioUsuarios.getUsuarios();
       let incioExitoso = false;
 
       for(let i = 0; i<allUser.length; i++){
-        if(allUser[i].obtenerNombreUsuario() == credenciales.correo && allUser[i].obtenerContrasenna() == credenciales.contrasenna){
-          servicioSesion.create(
+        if(allUser[i].obtenerNombreUsuario() == credenciales.nombreUsuario && allUser[i].obtenerContrasenna() == credenciales.contrasenna){
+          servicioSesion.crear(
             {
               nombre: allUser[i].obtenerNombreCompleto(),
               cedula: allUser[i].obtenerCedula()
@@ -34,4 +34,4 @@
     }
   }
 
-});
+})();
