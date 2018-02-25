@@ -44,6 +44,22 @@
         },
         controller: 'controladorLogin',
         controllerAs: 'vm'
+      })
+    
+//registro de muertos
+      .state('RegMuertos', {
+        url: '/Registro_Muertos',
+        templateUrl: './components/muertos/registroMuertos.view.html',
+        data:{
+          pageTitle: 'Registro de muertos'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/muertos/registroMuerto.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroMuerto',
+        controllerAs: 'vm'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -36,10 +36,10 @@ class Cliente{
 }
 
 class Muerto{
-  constructor(pEdad, pGenero, pApodo, pTamanno){
+  constructorpApodo(pApodo,pEdad, pGenero, pTamanno){
+    this.apodo = pApodo;
     this.edad = pEdad ;
     this.genero = pGenero;
-    this.apodo = pApodo;
     this.tamanno = pTamanno;
     this.entierro= '';
     this.listaRetoques=[];
