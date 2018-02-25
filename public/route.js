@@ -30,6 +30,7 @@
         controller: 'controladorUsuarios',
         controllerAs: 'vm'
       })
+      
       .state('logIn', {
         url: '/logIn',
         templateUrl: './components/logIn/logIn.view.html',
@@ -42,20 +43,6 @@
           }]
         },
         controller: 'controladorLogin',
-        controllerAs: 'vm'
-      })
-      .state('vehiculos', {
-        url: '/vehiculos',
-        templateUrl: './components/vehiculos/vehiculos.view.html',
-        data:{
-          pageTitle: 'Registro vehiculos'
-        },
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/vehiculos/vehiculos.controller.js')
-          }]
-        },
-        controller: 'controladorVehiculos',
         controllerAs: 'vm'
       });
 
