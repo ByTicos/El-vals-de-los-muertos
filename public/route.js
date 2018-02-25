@@ -30,6 +30,7 @@
         controller: 'controladorUsuarios',
         controllerAs: 'vm'
       })
+      
       .state('logIn', {
         url: '/logIn',
         templateUrl: './components/logIn/logIn.view.html',
@@ -44,18 +45,20 @@
         controller: 'controladorLogin',
         controllerAs: 'vm'
       })
-      .state('vehiculos', {
-        url: '/vehiculos',
-        templateUrl: './components/vehiculos/vehiculos.view.html',
+    
+//registro de muertos
+      .state('RegMuertos', {
+        url: '/Registro_Muertos',
+        templateUrl: './components/muertos/registroMuertos.view.html',
         data:{
-          pageTitle: 'Registro vehiculos'
+          pageTitle: 'Registro de muertos'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/vehiculos/vehiculos.controller.js')
+            return $ocLazyLoad.load('./components/muertos/registroMuerto.controller.js')
           }]
         },
-        controller: 'controladorVehiculos',
+        controller: 'controladorRegistroMuerto',
         controllerAs: 'vm'
       });
 

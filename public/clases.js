@@ -25,15 +25,25 @@ class Cliente{
   }
   obtenerCedula(){
     return this.cedula;
+<<<<<<< HEAD
 
+=======
+  }
+
+  obtenerNombreUsuario(){
+    return this.nombreUsuario;
+  }
+  obtenerContrasenna(){
+    return this.contrasenna;
+>>>>>>> master
   }
 }
 
 class Muerto{
-  constructor(pEdad, pGenero, pApodo, pTamanno){
+  constructorpApodo(pApodo,pEdad, pGenero, pTamanno){
+    this.apodo = pApodo;
     this.edad = pEdad ;
     this.genero = pGenero;
-    this.apodo = pApodo;
     this.tamanno = pTamanno;
     this.entierro= '';
     this.listaRetoques=[];
@@ -49,6 +59,12 @@ class Muerto{
 
   registrarFiesta(pFiesta){
     this.fiesta=pFiesta;
+  }
+  obtenerNombreUsuario(){
+    return this.nombreUsuario;
+  }
+  obtenerContrasenna(){
+    return this.contrasenna;
   }
 }
 

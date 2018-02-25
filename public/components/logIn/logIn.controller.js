@@ -4,15 +4,23 @@
   .module('funeraria')
   .controller('controladorLogin', controladorLogin);
 
-  controladorLogin.$inject = ['servicioUsuarios'];
+  controladorLogin.$inject = ['$location', 'servicioLogin'];
 
-  function controladorLogin(servicioUsuarios){
+  function controladorLogin($location, servicioLogin){
     let vm = this;
 
     vm.usuario = {};
     
     vm.inicarSesion = (pCredenciales) => {
-      console.log(pCredenciales)
+      let inicioCorrecto = servicioLogin.inicioSesion(pCredenciales);
+
+      if(inicioCorrecto == true){
+        swal("Datos correctos", "Sesion iniciada correctamente", "success");
+        $location.path('/users');
+      }
+      else{
+        swal("Datos erroneos", "asfasf", "error");
+      }
     } 
   }
 })();
