@@ -1,6 +1,33 @@
 // TODO Dentro de este archivo se crean los objetos con sus respectivos métodos
-<<<<<<< HEAD
 
+class Cliente{
+  constructor(pFoto, pNombre, pApellido, pCedula, pProvincia, pCanton, pDistrito, pUbicacion, pFechaNacimiento, pEdad, pGenero, pNombreUsuario, pContrasenna){
+    this.foto = pFoto;
+    this.nombre = pNombre;
+    this.apellido = pApellido;
+    this.cedula = pCedula;
+    this.provincia = pProvincia;
+    this.canton = pCanton;
+    this.disttrito = pDistrito;
+    this.ubicacion = pUbicacion;
+    this.fechaNacimiento = pFechaNacimiento;
+    this.edad = pEdad;
+    this.genero = pGenero;
+    this.nombreUsuario = pNombreUsuario;
+    this.contrasenna = pContrasenna;
+    this.listaMuertos = [];
+  }
+  registrarMuerto(pMuerto){
+    this.listaMuertos.push(pMuerto);
+  }
+  obtenerNombreCompleto(){
+    return `${this.nombre} ${this.apellido}`;
+  }
+  obtenerCedula(){
+    return this.cedula;
+ 
+  }
+}
 
 class Muerto{
   constructor(pEdad, pGenero, pApodo, pTamanno){
@@ -45,34 +72,9 @@ class Retoques {
     this.tipo = pTipo;
     this.nombre=pNombre;
     this.costo=pCosto;
-=======
-class Cliente{
-  constructor(pFoto, pNombre, pApellido, pCedula, pProvincia, pCanton, pDistrito, pUbicacion, pFechaNacimiento, pEdad, pGenero, pNombreUsuario, pContrasenna){
-    this.foto = pFoto;
-    this.nombre = pNombre;
-    this.apellido = pApellido;
-    this.cedula = pCedula;
-    this.provincia = pProvincia;
-    this.canton = pCanton;
-    this.disttrito = pDistrito;
-    this.ubicacion = pUbicacion;
-    this.fechaNacimiento = pFechaNacimiento;
-    this.edad = pEdad;
-    this.genero = pGenero;
-    this.nombreUsuario = pNombreUsuario;
-    this.contrasenna = pContrasenna;
-    this.listaMuertos = [];
-  }
-  registrarMuerto(pMuerto){
-    this.listaMuertos.push(pMuerto);
-  }
-  obtenerNombreCompleto(){
-    return `${this.nombre} ${this.apellido}`;
-  }
-  obtenerCedula(){
-    return this.cedula;
->>>>>>> Luisk
-  }
+
+
+}
 }
 
 class Fiestas {
@@ -103,11 +105,3 @@ class Animadores {
     this.costo = pCosto;
   }
 }
-
-
-
-
-
-
-
-
