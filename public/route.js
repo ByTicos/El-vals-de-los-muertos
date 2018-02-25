@@ -30,6 +30,20 @@
         controller: 'controladorUsuarios',
         controllerAs: 'vm'
       })
+      .state('logIn', {
+        url: '/logIn',
+        templateUrl: './components/logIn/logIn.view.html',
+        data:{
+          pageTitle: 'Iniciar sesión'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/logIn/logIn.controller.js')
+          }]
+        },
+        controller: 'controladorLogin',
+        controllerAs: 'vm'
+      })
       .state('vehiculos', {
         url: '/vehiculos',
         templateUrl: './components/vehiculos/vehiculos.view.html',

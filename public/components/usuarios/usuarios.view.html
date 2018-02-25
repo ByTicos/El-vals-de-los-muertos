@@ -1,22 +1,68 @@
 <div ng-include = "'./components/includes/_header.html'"></div>
 <section>
 <div class="pt-5">
-  <form ng-submit="vm.registrarUsuario(vm.nuevoUsuario)">
-
-    <label for="">Cédula</label>
-    <input type="text" ng-model="vm.nuevoUsuario.cedula">
-
-    <label for="">Nombre 1</label>
-    <input type="text" ng-model="vm.nuevoUsuario.nombre1">
-
-    <label for="">Apellido 1</label>
-    <input type="text" ng-model="vm.nuevoUsuario.apellido1">
-
-    <label for="">Edad</label>
-    <input type="number" ng-model="vm.nuevoUsuario.edad">
-
+  <form class="form-horizontal row" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Foto</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.foto">
+      </div>
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.nombre">
+      </div>
+      <div class="form-group">
+        <label for="">Apellido</label>
+        <input type="text" class="form-control" ng-model="vm.nuevoUsuario.apellido">
+      </div>
+      <div class="form-group">
+        <label for="">Cédula</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.cedula">
+      </div>
+      <div class="form-group">
+        <label for="">Provincia</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.provincia">
+      </div>
+      <div class="form-group">
+        <label for="">Canton</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.canton">
+      </div>
+      <div class="form-group">
+        <label for="">Distrito</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.distrito">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Ubicacion</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.ubicacion">
+      </div>
+      <div class="form-group">
+        <label for="">Fecha de nacimiento</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.fechaNacimiento">
+      </div>
+      <div class="form-group">
+        <label for="">Edad</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.edad">
+      </div>
+      <div class="form-group">
+        <label for="">Genero</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.genero">
+      </div>
+      <div class="form-group">
+        <label for="">Nombre de usuario</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.nombreUsuario">
+      </div>
+      <div class="form-group">
+        <label for="">Contraseña</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.contrasenna">
+      </div>
+      <div class="form-group">
+        <label for="">Confirmar contrasenna</label>
+        <input class="form-control" type="text" ng-model="vm.nuevoUsuario.confirmarContrasenna">
+      </div>
+    </div>
     <button class="btn btn-primary" type="submit">Registrar</button>
-
   </form>
 
 </div>
@@ -25,19 +71,34 @@
   <table class="table">
     <thead>
         <tr>
-          <th>Cédula</th>
+          <th>Foto</th>
           <th>Nombre</th>
           <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Provincia</th>
+          <th>Cantón</th>
+          <th>Distrito</th>
+          <th>Ubicacion</th>
+          <th>Fecha de Nacimiento</th>
           <th>Edad</th>
-          <th>Boton</th>
+          <th>Género</th>
+          <th>Nombre de usuario</th>
         </tr>
     </thead>
     <tbody>
       <tr ng-repeat="usuario in vm.listaUsuarios">
+        <td>{{usuario.foto}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
         <td>{{usuario.cedula}}</td>
-        <td>{{usuario.nombre1}}</td>
-        <td>{{usuario.apellido1}}</td>
+        <td>{{usuario.provincia}}</td>
+        <td>{{usuario.canton}}</td>
+        <td>{{usuario.distrito}}</td>
+        <td>{{usuario.ubicacion}}</td>
+        <td>{{usuario.fechaNacimiento}}</td>
         <td>{{usuario.edad}}</td>
+        <td>{{usuario.genero}}</td>
+        <td>{{usuario.nombreUsuario}}</td>  
         <td>
           <button class="btn btn-warning" type="button" ng-click="vm.verUsuario(usuario)">Hola</button>
         </td>
