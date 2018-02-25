@@ -25,6 +25,12 @@ class Cliente{
   obtenerCedula(){
     return this.cedula;
   }
+  obtenerNombreUsuario(){
+    return this.nombreUsuario;
+  }
+  obtenerContrasenna(){
+    return this.contrasenna;
+  }
 }
 
 class Vehiculo{
