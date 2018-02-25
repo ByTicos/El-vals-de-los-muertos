@@ -25,9 +25,6 @@ class Cliente{
   }
   obtenerCedula(){
     return this.cedula;
-<<<<<<< HEAD
-
-=======
   }
 
   obtenerNombreUsuario(){
@@ -35,7 +32,6 @@ class Cliente{
   }
   obtenerContrasenna(){
     return this.contrasenna;
->>>>>>> master
   }
 }
 
