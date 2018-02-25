@@ -27,7 +27,7 @@
     // Funcion que almacena en el localStorage todos los usuarios
     function _addUsuario(pnuevoUsuario){
       let listaUsuarios = _getUsuarios();
-      let respuesta = true; 
+      let respuesta = true;
       listaUsuarios.push(pnuevoUsuario);
 
       asyncLocalStorage.setItem('usuariosLS', listaUsuarios).then((response) =>{
@@ -46,11 +46,11 @@
         listaUsuarios = [];
       }else{
         listaUsuariosLocal.forEach(obj => {
-          
+
           let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
 
           listaUsuarios.push(objUsuarios);
-        })
+        });
       }
 
       return listaUsuarios;

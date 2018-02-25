@@ -30,7 +30,7 @@
         controller: 'controladorUsuarios',
         controllerAs: 'vm'
       })
-      
+
       .state('logIn', {
         url: '/logIn',
         templateUrl: './components/logIn/logIn.view.html',
@@ -45,7 +45,7 @@
         controller: 'controladorLogin',
         controllerAs: 'vm'
       })
-    
+
 //registro de muertos
       .state('RegMuertos', {
         url: '/Registro_Muertos',
@@ -59,6 +59,21 @@
           }]
         },
         controller: 'controladorRegistroMuerto',
+        controllerAs: 'vm'
+      })
+
+      .state('registroLugares', {
+        url: '/registroLugares',
+        templateUrl: './components/lugares/registroLugares.view.html',
+        data: {
+          pageTitle: 'Registro de Lugares'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/lugares/registroLugares.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroLugares',
         controllerAs: 'vm'
       });
 
