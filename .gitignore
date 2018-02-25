@@ -3,3 +3,4 @@ node_modules
 public/lib
 package-lock.json
 TODO.md
+package.json
