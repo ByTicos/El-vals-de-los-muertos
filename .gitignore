@@ -4,3 +4,5 @@ public/lib
 package-lock.json
 TODO.md
 package.json
+.DS_Store
+TODO.md
