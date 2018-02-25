@@ -1,7 +1,8 @@
 <div ng-include="'./components/includes/_header.html'"></div>
+
 <section>
   <div class="pt-5">
-    <form ng-submit="vm.registrarMuerto(vm.nuevoVehiculo)">
+    <form ng-submit="vm.agregarnuevoMuerto(vm.nuevoMuerto)">
 
       <label for="">Apodo</label>
       <input type="text" ng-model="vm.nuevoMuerto.apodo">
@@ -30,16 +31,15 @@
           <th>Entierro</th>
           <th>Retoques</th>
           <th>Fiesta</th>
-          <th>Registrar</th>
           <th>Desactivar</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="vehiculo in vm.listaVehiculos">
-          <td>{{Muerto.apodo}}</td>
-          <td>{{Muerto.edad}}</td>
-          <td>{{Muerto.genero}}</td>
-          <td>{{Muerto.tamanno}}</td>
+        <tr ng-repeat="muerto in vm.listaMuertos">
+          <td>{{muerto.apodo}}</td>
+          <td>{{muerto.edad}}</td>
+          <td>{{muerto.genero}}</td>
+          <td>{{muerto.tamanno}}</td>
           <td><button type="button">Entierros</button></td>
           <td>
             <button type="button">Retoques</button>
@@ -48,14 +48,11 @@
             <button type="button">Fiesta</button>
           </td>
           <td>
-            <button type="button">Registrar</button>
-          </td>
-          <td>
             <button type="button">Desactivar</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</section>
+</section> 
 <div ng-include="'./components/includes/_footer.html'"></div>

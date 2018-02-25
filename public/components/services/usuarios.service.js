@@ -20,7 +20,9 @@
 
     let publicAPI = {
       addUsuario : _addUsuario,
-      getUsuarios : _getUsuarios
+      getUsuarios : _getUsuarios,
+      agregarMuerto : _agregarMuerto,
+      obtenerMuerto : _obtenerMuerto
     }
     return publicAPI;
 
@@ -56,4 +58,41 @@
       return listaUsuarios;
     }
   }
+
+  
+    
+
+    function _agregarMuerto(pnuevoMuerto){
+      let listaMuertos = _obtenerMuerto();
+      //let respuesta = true; 
+      listaMuertos.push(pnuevoMuerto);
+      
+      localStorage.setItem('muertosLS', JSON.stringify(listaMuertos));
+
+/*
+      asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
+        respuesta = response;
+      });
+      return respuesta;*/
+    }
+
+    
+    function _obtenerMuerto(){
+      let listaMuertos = [];
+      let listaMuertosLocal = JSON.parse(localStorage.getItem("muertosLS"));
+
+      if(listaMuertosLocal == null){
+        listaMuertos = [];
+      }else{
+        listaMuertosLocal.forEach(obj => {
+          
+          let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
+
+          listaMuertos.push(objMuerto);
+        })
+      }
+
+      return listaMuertos;
+    }
+  
 })();
