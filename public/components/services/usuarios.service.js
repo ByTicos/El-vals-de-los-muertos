@@ -57,46 +57,36 @@
 
       return listaUsuarios;
     }
-  }
-<<<<<<< HEAD
-})();
-=======
+    function _agregarMuerto (pnuevoMuerto) {
+  let listaMuertos = _obtenerMuerto ();
+  //let respuesta = true;
+  listaMuertos.push (pnuevoMuerto);
 
-  
-    
+  localStorage.setItem ('muertosLS', JSON.stringify (listaMuertos));
 
-    function _agregarMuerto(pnuevoMuerto){
-      let listaMuertos = _obtenerMuerto();
-      //let respuesta = true; 
-      listaMuertos.push(pnuevoMuerto);
-      
-      localStorage.setItem('muertosLS', JSON.stringify(listaMuertos));
-
-/*
+  /*
       asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
         respuesta = response;
       });
       return respuesta;*/
-    }
+}
 
-    
-    function _obtenerMuerto(){
-      let listaMuertos = [];
-      let listaMuertosLocal = JSON.parse(localStorage.getItem("muertosLS"));
+function _obtenerMuerto () {
+  let listaMuertos = [];
+  let listaMuertosLocal = JSON.parse (localStorage.getItem ('muertosLS'));
 
-      if(listaMuertosLocal == null){
-        listaMuertos = [];
-      }else{
-        listaMuertosLocal.forEach(obj => {
-          
-          let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
+  if (listaMuertosLocal == null) {
+    listaMuertos = [];
+  } else {
+    listaMuertosLocal.forEach (obj => {
+      let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
 
-          listaMuertos.push(objMuerto);
-        })
-      }
+      listaMuertos.push (objMuerto);
+    });
+  }
 
-      return listaMuertos;
-    }
-  
+  return listaMuertos;
+}
+
+  }
 })();
->>>>>>> Heiner
