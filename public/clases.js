@@ -25,7 +25,7 @@ class Cliente{
   }
   obtenerCedula(){
     return this.cedula;
- 
+
   }
 }
 
@@ -86,14 +86,14 @@ class Fiestas {
     this.animador = '';
   }
   registrarAnimador(pAnimador){
-    this.animador=pAnimador;
+    this.animador = pAnimador;
   }
 }
 
 class Lugares {
-  constructor (pId,pLugar) {
-    this.id=pId;
-    this.lugar = pLugar;
+  constructor (pId,pNombre) {
+    this.id = pId;
+    this.nombre = pNombre;
   }
 }
 
