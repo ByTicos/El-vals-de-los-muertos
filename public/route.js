@@ -75,6 +75,21 @@
         },
         controller: 'controladorRegistroLugares',
         controllerAs: 'vm'
+      })
+
+      .state('registroRetoques', {
+        url: '/retoques',
+        templateUrl: './components/retoques/registroRetoques.view.html',
+        data: {
+          pageTitle: 'Retoques'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/retoques/registroRetoques.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroRetoques',
+        controllerAs: 'vm'
       });
 
     $urlRouterProvider.otherwise('/');
