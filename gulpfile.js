@@ -49,6 +49,16 @@ gulp.task('dependencies', () => {
   ])
     .pipe(gulp.dest('./public/lib/sweetalert'));
 
+  gulp.src([
+      './node_modules/wow.js/dist/wow.min.js',
+   ])
+    .pipe(gulp.dest('./public/lib/wow'));
+
+  gulp.src([
+    './node_modules/owl.carousel/dist/owl.carousel.min.js',
+   ])
+  .pipe(gulp.dest('./public/lib/owl-carousel'));
+
 });
 
 gulp.task('reload', () => {
