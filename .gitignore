@@ -5,11 +5,17 @@ package-lock.json
 TODO.md
 package.json
 <<<<<<< HEAD
+<<<<<<< HEAD
 TODO.md
 public/sources/video/rain.mp4
 public/components/includes/_footer.html
 public/clases.js
 =======
 .DS_Store
+TODO.md
+>>>>>>> Jeremy
+=======
+.DS_Store
+TODO.md
 TODO.md
 >>>>>>> Jeremy
