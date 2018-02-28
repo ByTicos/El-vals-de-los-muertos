@@ -85,7 +85,6 @@ class Retoques {
     this.nombre=pNombre;
     this.costo=pCosto;
 
-
 }
 }
 
