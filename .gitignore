@@ -4,6 +4,18 @@ public/lib
 package-lock.json
 TODO.md
 package.json
+<<<<<<< HEAD
 .DS_Store
 TODO.md
 TODO.md
+=======
+<<<<<<< HEAD
+TODO.md
+public/sources/video/rain.mp4
+public/components/includes/_footer.html
+public/clases.js
+=======
+.DS_Store
+TODO.md
+>>>>>>> Jeremy
+>>>>>>> master

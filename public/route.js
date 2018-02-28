@@ -47,8 +47,8 @@
       })
 
 //registro de muertos
-      .state('RegMuertos', {
-        url: '/Registro_Muertos',
+      .state('registrarMuertos', {
+        url: '/muertos',
         templateUrl: './components/muertos/registroMuertos.view.html',
         data:{
           pageTitle: 'Registro de muertos'
