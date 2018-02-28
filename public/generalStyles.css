@@ -15,6 +15,7 @@
   margin-bottom: 70px;
 }
 
+
 /* Sobre nosotros Section
 --------------------------------*/
 #about {
@@ -347,3 +348,19 @@
   }
 }
 
+/*------ CSS para los ojos */
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:transparent;
+}
+
+.bg {
+	no-repeat center center relative; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
