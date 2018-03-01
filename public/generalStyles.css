@@ -85,12 +85,15 @@
 --------------------------------*/
 #services {
   padding: 30px 0 0 0;
-  background-image: url(../../sources/img/Fondoservicios-02.jpg);
+  background-image: url(../../sources/img/fondo-02.jpg);
+  width: 1300px;
 
 
 }
 
-.Imagenmuertos{
+.imagenheader{
+  width: 1295px;
+
 }
 
 
