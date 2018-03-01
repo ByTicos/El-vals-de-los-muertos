@@ -16,6 +16,21 @@
         }
       })
 
+      .state('admin', {
+        url: '/admin',
+        templateUrl: './components/admin/admin.view.html',
+        data:{
+          pageTitle: 'Registro admin'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/admin/admin.controller.js')
+          }]
+        },
+        controller: 'controladorAdministrador',
+        controllerAs: 'vm'
+      })
+
       .state('usuarios', {
         url: '/users',
         templateUrl: './components/usuarios/usuarios.view.html',

@@ -22,7 +22,8 @@
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
       addMuerto : _addMuerto,
-      getMuerto : _getMuerto
+      getMuerto : _getMuerto,
+      getAllMuertos: _getAllMuertos
     }
     return publicAPI;
 
@@ -90,7 +91,21 @@ function _getMuerto(objUsuario){
       }
       return listaMuertos;
     }
-
+  function _getAllMuertos(){
+    let listaUsuarios = _getUsuarios();
+    let listaMuertos = [];
+    for (let i = 0; i < listaUsuarios.length; i++){
+      let listaMuertosTemp = listaUsuarios[i].obtenerMuertos();
+      if(listaMuertosTemp != []){
+        let muertoTemp = {};
+        for(let j = 0; j < listaMuertosTemp.length; j++){
+          muertoTemp = listaMuertosTemp[j];
+          listaMuertos.push(muertoTemp);
+        }
+      }
+    }
+    return listaMuertos;
+  }
     function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }

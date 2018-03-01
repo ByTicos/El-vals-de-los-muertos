@@ -1,0 +1,78 @@
+<div ng-include = "'./components/includes/_header.html'"></div>
+<div class="container-fluid">
+    <h1>Admin</h1>
+  <div class="pt-5">
+    <legend>Usuarios</legend>
+    <table class="table table-hover">
+      <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cédula</th>
+            <th>Provincia</th>
+            <th>Cantón</th>
+            <th>Distrito</th>
+            <th>Ubicacion</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Nombre de usuario</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="usuario in vm.listaUsuarios">
+          <td>{{usuario.foto}}</td>
+          <td>{{usuario.nombre}}</td>
+          <td>{{usuario.apellido}}</td>
+          <td>{{usuario.cedula}}</td>
+          <td>{{usuario.provincia}}</td>
+          <td>{{usuario.canton}}</td>
+          <td>{{usuario.distrito}}</td>
+          <td>{{usuario.ubicacion}}</td>
+          <td>{{usuario.fechaNacimiento | date :  "dd/mm/yyyy" }}</td>
+          <td>{{usuario.edad}}</td>
+          <td>{{usuario.genero}}</td>
+          <td>{{usuario.nombreUsuario}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pt-5">
+      <legend>Muertos</legend>
+    <table class="table table table-hover">
+      <thead>
+        <tr>
+          <th>Apodo</th>
+          <th>Edad</th>
+          <th>Genero</th>
+          <th>Tamaño</th>
+          <th>Entierro</th>
+          <th>Retoques</th>
+          <th>Fiesta</th>
+          <th>Desactivar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="muerto in vm.listaMuertos">
+          <td>{{muerto.apodo}}</td>
+          <td>{{muerto.edad}}</td>
+          <td>{{muerto.genero}}</td>
+          <td>{{muerto.tamanno}}</td>
+          <td>
+            <button class="btn btn-primary" type="button">Entierros</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" type="button">Retoques</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" type="button">Fiesta</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" type="button">Desactivar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
