@@ -4,9 +4,15 @@
   .module('funeraria')
   .controller('controladorUsuarios', controladorUsuarios);
 
+<<<<<<< HEAD
   controladorUsuarios.$inject = ['$stateParams','$state','servicioUsuarios'];
 
   function controladorUsuarios( $stateParams, $state, servicioUsuarios){
+=======
+  controladorUsuarios.$inject = ['$location','servicioUsuarios'];
+
+  function controladorUsuarios($location, servicioUsuarios){
+>>>>>>> Luisk
     let vm = this;
 
     vm.nuevoUsuario = {};
@@ -31,8 +37,8 @@
       // Retroalimentación Visual para los usuarios
       if(registro == true){
         swal("Registro exitoso", "El usuario ha sido registrado correctamente", "success", {
-          button: "Aceptar",
-        });
+          button: "Aceptar",});
+          $location.path('/logIn');
       }
       else{
         swal("Registro fallido", "Ha ocurrido un error, intente nuevamente", "error", {
