@@ -4,9 +4,9 @@
   .module('funeraria')
   .controller('controladorUsuarios', controladorUsuarios);
 
-  controladorUsuarios.$inject = ['servicioUsuarios'];
+  controladorUsuarios.$inject = ['$stateParams','$state','$location','servicioUsuarios'];
 
-  function controladorUsuarios(servicioUsuarios){
+  function controladorUsuarios( $stateParams, $state,$location, servicioUsuarios){
     let vm = this;
 
     vm.nuevoUsuario = {};
@@ -31,8 +31,8 @@
       // Retroalimentación Visual para los usuarios
       if(registro == true){
         swal("Registro exitoso", "El usuario ha sido registrado correctamente", "success", {
-          button: "Aceptar",
-        });
+          button: "Aceptar",});
+          $location.path('/logIn');
       }
       else{
         swal("Registro fallido", "Ha ocurrido un error, intente nuevamente", "error", {
@@ -46,8 +46,9 @@
       listarUsuarios();
     }
 
-    vm.verUsuario = (pUsuario) => {
-      console.log(pUsuario);
+    vm.registrarMuerto = (pUsuario) => {
+    //  console.log(pUsuario);
+     $state.go('stateMuertos', { objUsuarioTemp : JSON.stringify(pUsuario)});
     }
     
     function listarUsuarios() {

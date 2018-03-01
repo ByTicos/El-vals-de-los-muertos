@@ -47,11 +47,14 @@
       })
 
 //registro de muertos
-      .state('registrarMuertos', {
+      .state('stateMuertos', {
         url: '/muertos',
         templateUrl: './components/muertos/registroMuertos.view.html',
         data:{
           pageTitle: 'Registro de muertos'
+        },
+        params: {
+          objUsuarioTemp:''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -82,6 +85,9 @@
         templateUrl: './components/retoques/registroRetoques.view.html',
         data: {
           pageTitle: 'Retoques'
+        },
+        params: {
+          objVehiculoTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {

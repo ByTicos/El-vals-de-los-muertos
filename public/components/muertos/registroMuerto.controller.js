@@ -4,34 +4,44 @@
   .module('funeraria')
   .controller('controladorRegistroMuerto', controladorRegistroMuerto);
 
-  controladorRegistroMuerto.$inject = ['servicioUsuarios'];
+  controladorRegistroMuerto.$inject = ['$stateParams','$state','servicioUsuarios'];
 
-  function controladorRegistroMuerto(servicioUsuarios) {
+  function controladorRegistroMuerto($stateParams,$state,servicioUsuarios) {
     let vm = this;
+
+    if(!$stateParams.objUsuarioTemp){
+      $state.go('usuarios');
+    }
+
+    let objSinFormatoUsuario = JSON.parse($stateParams.objUsuarioTemp);
+
+    let objUsuario = new Cliente (objSinFormatoUsuario.foto, objSinFormatoUsuario.nombre, objSinFormatoUsuario.apellido, objSinFormatoUsuario.cedula, objSinFormatoUsuario.provincia,  objSinFormatoUsuario.canton,  objSinFormatoUsuario.distrito,  objSinFormatoUsuario.ubicacion,  objSinFormatoUsuario.fechaNacimiento,  objSinFormatoUsuario.edad,  objSinFormatoUsuario.genero,  objSinFormatoUsuario.nombreUsuario,  objSinFormatoUsuario.contrasenna,  objSinFormatoUsuario.confirmarContrasenna);
+
     vm.nuevoMuerto = {};
-    vm.listaMuertos=listarMuertos();
-    listarMuertos();
 
-   
+    //listarMuertos();
 
-    vm.agregarnuevoMuerto = (pnuevoMuerto) =>{
-     console.log(pnuevoMuerto);
+    //vm.listaMuertos = servicioUsuarios.getMuerto(objUsuario);
+    
+    vm.registrarMuerto = (pnuevoMuerto) =>{
+     
 
-     let objNuevoMuerto = new Muerto(pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
+     let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
 
-     console.log('objeto con nuevo muerto');
-     console.log(objNuevoMuerto);
+     servicioUsuarios.addMuerto(objNuevoMuerto,objUsuario);
 
-     servicioUsuarios.agregarMuerto(objNuevoMuerto);
+     $state.go('usuarios');
 
-     swal("en todas","ahi vamos", "success",{ button:"aceptar",});
+     swal("Registro exitoso", "Se ha registrado correctamente el difunto", "success", {
+        button: "Aceptar",
+      });
+     //listarMuertos ();
 
      vm.nuevoMuerto = null;
     
-    listarMuertos();
     }
-     function listarMuertos() {
-      vm.listaMuertos = servicioUsuarios.obtenerMuerto();
-    }
+    /*  function listarMuertos() {
+      vm.listaMuertos = servicioUsuarios.getMuerto();
+    } */
   }
 })(); 
