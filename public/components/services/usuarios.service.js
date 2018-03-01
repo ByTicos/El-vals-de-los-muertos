@@ -40,7 +40,7 @@
     }
 
     // Funcion que trae todos los usuarios del localStorage y a partir de esos datos vuelve a crear un arreglo con todos los objetos de tipo usuario
-    function _getUsuarios(){
+      function _getUsuarios(){
       let listaUsuarios = [];
       let listaUsuariosLocal = JSON.parse(localStorage.getItem("usuariosLS"));
 
@@ -48,11 +48,13 @@
         listaUsuarios = [];
       }else{
         listaUsuariosLocal.forEach(obj => {
+          let objUsuario = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
 
-          let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
-          
-
-          listaUsuarios.push(objUsuarios);
+          obj.listaMuertos.forEach(objMuerto =>{
+            let objMuertoTemp = new Muerto(objMuerto.apodo, objMuerto.edad, objMuerto.genero, objMuerto.tamanno);
+            objUsuario.agregarmuerto(objMuertoTemp);
+          })
+          listaUsuarios.push(objUsuario);
         });
       }
 
