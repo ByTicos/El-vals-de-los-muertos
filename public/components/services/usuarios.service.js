@@ -81,7 +81,9 @@ function _getMuerto(objUsuario){
       let sesion = JSON.parse(sessionStorage.getItem('sesion'));
       for( let i=0; i<listaUsuarios.length;i++){
         if(sesion.cedula == listaUsuarios[i].obtenerCedula()){
-          listaMuertos = listaUsuarios[i].getMuerto();
+          if(listaUsuarios[i].obtenerMuertos() != null){
+            listaMuertos = listaUsuarios[i].obtenerMuertos();
+          }
         }
       }
       return listaMuertos;

@@ -16,7 +16,7 @@
 
     //listarMuertos();
 
-    vm.listaMuertos = [];
+    vm.listaMuertos = servicioUsuarios.getMuerto();
     
     vm.registrarMuerto = (pnuevoMuerto) =>{
      
@@ -34,9 +34,6 @@
      vm.nuevoMuerto = null;
     
     }
-      function listarMuertos() {
-      vm.listaMuertos = servicioUsuarios.getMuerto();
-        
-    } 
+     
   }
 })(); 
