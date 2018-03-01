@@ -4,15 +4,9 @@
   .module('funeraria')
   .controller('controladorUsuarios', controladorUsuarios);
 
-<<<<<<< HEAD
-  controladorUsuarios.$inject = ['$stateParams','$state','servicioUsuarios'];
+  controladorUsuarios.$inject = ['$stateParams','$state','$location','servicioUsuarios'];
 
-  function controladorUsuarios( $stateParams, $state, servicioUsuarios){
-=======
-  controladorUsuarios.$inject = ['$location','servicioUsuarios'];
-
-  function controladorUsuarios($location, servicioUsuarios){
->>>>>>> Luisk
+  function controladorUsuarios( $stateParams, $state,$location, servicioUsuarios){
     let vm = this;
 
     vm.nuevoUsuario = {};
