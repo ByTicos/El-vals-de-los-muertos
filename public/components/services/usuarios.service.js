@@ -22,7 +22,7 @@
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
       addMuerto : _addMuerto,
-      //getMuerto : _getMuerto
+      getMuerto : _getMuerto
     }
     return publicAPI;
 
@@ -58,11 +58,12 @@
 
       return listaUsuarios;
     }
-    function _addMuerto (pnuevoMuerto,pusuario) {
+    function _addMuerto (pnuevoMuerto) {
       let listaUsuarios = _getUsuarios();
+      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
 
       for(let i = 0; i < listaUsuarios.length; i++){
-        if (pusuario.obtenerCedula() == listaUsuarios[i].obtenerCedula()){
+        if (sesion.cedula == listaUsuarios[i].obtenerCedula()){
           listaUsuarios[i].agregarmuerto(pnuevoMuerto);
         }
       }
@@ -72,21 +73,20 @@
 };
 
 
-/*
+
 
 function _getMuerto(objUsuario){
       let listaUsuarios = _getUsuarios();
-      let muertoUsuario = [];
-
-      for(let i = 0; i < listaUsuarios.length; i++){
-        if (objUsuario.obtenerCedula() == listaUsuarios[i].obtenerCedula()){
-          muertoUsuario = listaUsuarios[i].getMuerto();
+      let listaMuertos = [];
+      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
+      for( let i=0; i<listaUsuarios.length;i++){
+        if(sesion.cedula == listaUsuarios[i].obtenerCedula()){
+          listaMuertos = listaUsuarios[i].getMuerto();
         }
       }
-
-      return muertoUsuario;
+      return listaMuertos;
     }
-*/
+
     function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }

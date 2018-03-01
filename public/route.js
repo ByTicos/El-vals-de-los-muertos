@@ -53,9 +53,6 @@
         data:{
           pageTitle: 'Registro de muertos'
         },
-        params: {
-          objUsuarioTemp:''
-        },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/muertos/registroMuerto.controller.js')

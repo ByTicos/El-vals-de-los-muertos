@@ -6,15 +6,12 @@
 
   controladorRetoques.$inject = ['$stateParams', '$state', 'servicioUsuarios']
 
-  function controladorRetoques($stateParams, $state, servicioUsuarios){
+  function controladorRetoques( $state, servicioUsuarios){
     let vm = this;
 
     // aqui validamos que el paramatero exista, en caso de que no exista nos redijirá al estado anterior
-    if(!$stateParams.objMuertoTemp){
-      $state.go('registrarMuertos');
-    }
-
-    let objSinFormatoMuerto = JSON.parse($stateParams.objMuertoTemp);
+    
+    
 
     let objMuerto = new Muerto (objSinFormatoVehiculo.apodo, objSinFormatoVehiculo.edad, objSinFormatoVehiculo.genero,objSinFormatoVehiculo.tamanno);
 

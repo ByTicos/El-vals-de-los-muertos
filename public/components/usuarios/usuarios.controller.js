@@ -4,9 +4,9 @@
   .module('funeraria')
   .controller('controladorUsuarios', controladorUsuarios);
 
-  controladorUsuarios.$inject = ['$stateParams','$state','$location','servicioUsuarios'];
+  controladorUsuarios.$inject = ['$state','$location','servicioUsuarios'];
 
-  function controladorUsuarios( $stateParams, $state,$location, servicioUsuarios){
+  function controladorUsuarios(  $state,$location, servicioUsuarios){
     let vm = this;
 
     vm.nuevoUsuario = {};
@@ -46,10 +46,7 @@
       listarUsuarios();
     }
 
-    vm.registrarMuerto = (pUsuario) => {
-    //  console.log(pUsuario);
-     $state.go('stateMuertos', { objUsuarioTemp : JSON.stringify(pUsuario)});
-    }
+   
     
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.getUsuarios();
