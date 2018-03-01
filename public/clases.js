@@ -17,8 +17,12 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
-  registrarMuerto(pMuerto){
-    this.listaMuertos.push(pMuerto);
+  obtenerMuertos(){
+    return this.listaMuertos;
+
+  }
+  agregarmuerto(pnuevoMuerto){
+    this.listaMuertos.push(pnuevoMuerto);
   }
   obtenerNombreCompleto(){
     return `${this.nombre} ${this.apellido}`;
@@ -56,12 +60,7 @@ class Muerto{
   registrarFiesta(pFiesta){
     this.fiesta=pFiesta;
   }
-  obtenerNombreUsuario(){
-    return this.nombreUsuario;
-  }
-  obtenerContrasenna(){
-    return this.contrasenna;
-  }
+ 
 }
 
 class Entierro {
