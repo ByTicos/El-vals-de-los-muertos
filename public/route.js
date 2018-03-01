@@ -86,6 +86,9 @@
         data: {
           pageTitle: 'Retoques'
         },
+        params: {
+          objVehiculoTemp: ''
+        },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/retoques/registroRetoques.controller.js')
