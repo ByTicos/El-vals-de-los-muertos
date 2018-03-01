@@ -17,8 +17,8 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
-  registrarMuerto(pMuerto){
-    this.listaMuertos.push(pMuerto);
+  agregarmuerto(pnuevoMuerto){
+    this.listaMuertos.push(pnuevoMuerto);
   }
   obtenerNombreCompleto(){
     return `${this.nombre} ${this.apellido}`;

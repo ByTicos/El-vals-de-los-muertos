@@ -21,8 +21,8 @@
     let publicAPI = {
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
-      agregarMuerto : _agregarMuerto,
-      obtenerMuerto : _obtenerMuerto
+      addMuerto : _addMuerto,
+      //getMuerto : _getMuerto
     }
     return publicAPI;
 
@@ -50,6 +50,7 @@
         listaUsuariosLocal.forEach(obj => {
 
           let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
+          
 
           listaUsuarios.push(objUsuarios);
         });
@@ -57,36 +58,39 @@
 
       return listaUsuarios;
     }
-    function _agregarMuerto (pnuevoMuerto) {
-  let listaMuertos = _obtenerMuerto ();
-  //let respuesta = true;
-  listaMuertos.push (pnuevoMuerto);
+    function _addMuerto (pnuevoMuerto,pusuario) {
+      let listaUsuarios = _getUsuarios();
 
-  localStorage.setItem ('muertosLS', JSON.stringify (listaMuertos));
+      for(let i = 0; i < listaUsuarios.length; i++){
+        if (pusuario.obtenerCedula() == listaUsuarios[i].obtenerCedula()){
+          listaUsuarios[i].agregarmuerto(pnuevoMuerto);
+        }
+      }
 
-  /*
-      asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
-        respuesta = response;
-      });
-      return respuesta;*/
-}
+      actualizarLocal(listaUsuarios);
+  
+};
 
-function _obtenerMuerto () {
-  let listaMuertos = [];
-  let listaMuertosLocal = JSON.parse (localStorage.getItem ('muertosLS'));
 
-  if (listaMuertosLocal == null) {
-    listaMuertos = [];
-  } else {
-    listaMuertosLocal.forEach (obj => {
-      let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
+/*
 
-      listaMuertos.push (objMuerto);
-    });
-  }
+function _getMuerto(objUsuario){
+      let listaUsuarios = _getUsuarios();
+      let muertoUsuario = [];
 
-  return listaMuertos;
-}
+      for(let i = 0; i < listaUsuarios.length; i++){
+        if (objUsuario.obtenerCedula() == listaUsuarios[i].obtenerCedula()){
+          muertoUsuario = listaUsuarios[i].getMuerto();
+        }
+      }
+
+      return muertoUsuario;
+    }
+*/
+    function actualizarLocal(plistaActualizada) {
+     localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
+   }
+
 
   }
 })();
