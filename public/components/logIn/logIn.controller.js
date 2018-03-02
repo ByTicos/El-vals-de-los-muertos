@@ -16,7 +16,7 @@
 
       if(inicioCorrecto == true){
         swal("Datos correctos", "Sesion iniciada correctamente", "success");
-        $location.path('/muertos');
+        $location.path('/users');
       }
       else{
         swal("Datos erroneos", "asfasf", "error");
