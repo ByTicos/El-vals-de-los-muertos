@@ -80,8 +80,8 @@ class Entierro {
 }
 
 class Retoques {
-  constructor (pTipo,pNombre,pCosto) {
-    this.tipo = pTipo;
+  constructor (pId,pNombre,pCosto) {
+    this.id = pId;
     this.nombre=pNombre;
     this.costo=pCosto;
 

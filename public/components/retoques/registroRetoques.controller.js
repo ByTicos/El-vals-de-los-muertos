@@ -3,10 +3,11 @@
   'use strict';
   angular
   .module('funeraria')
-  .controller('controladorRetoques', controladorRetoques);
+  .controller('controladorRegistroRetoques', controladorRegistroRetoques);
 
-  controladorRetoques.$inject = ['$stateParams', '$state', 'servicioUsuarios']
+  controladorRegistroRetoques.$inject = ['servicioRetoques']
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   function controladorRetoques($stateParams, $state, servicioUsuarios){
     let vm = this;
@@ -32,31 +33,38 @@
 
     listaRetoques();
 
+=======
+  function controladorRegistroRetoques(servicioRetoques){
+    let vm = this;
+
+>>>>>>> origin/Aaron
     vm.nuevoRetoque = {};
+    vm.listaRetoques = listarRetoques();
 
-    vm.listaRetoques = servicioUsuarios.getRetoques(objMuerto);
+    listarRetoques();
 
-    vm.registrarRetoque = (pnuevoRetoque) => {
+    vm.agregarNuevoRetoque = (pnuevoRetoque) => {
+      console.log(pnuevoRetoque);
 
-      let objRetoque = new Retoques(pnuevoRetoque.tipo, pnuevoRetoque.nombre, pnuevoRetoque.costo)
+      let objNuevoRetoque = new Retoques(pnuevoRetoque.id, pnuevoRetoque.nombre, pnuevoRetoque.costo);
 
-      servicioUsuarios.addRetoques(objMuerto, objRetoque);
+      console.log('objeto con usuario');
+      console.log(objNuevoRetoque);
 
-      listaRetoques();
+      servicioRetoques.agregarRetoques(objNuevoRetoque);
 
-      swal("Registro exitoso", "Se ha registrado correctamente un nuevo retoque", "success", {
+      // Retroalimentación Visual para los usuarios
+      swal("Registro exitoso", "El retoque ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
 
       vm.nuevoRetoque = null;
+      listarRetoques();
     }
 
-    vm.volver = () => {
-      $state.go('registrarMuertos');
-    }
 
-    function listaRetoques(){
-      vm.listaRetoques = servicioUsuarios.getRetoques(objMuerto);
+    function listarRetoques() {
+      vm.listaRetoques = servicioRetoques.obtenerRetoques();
     }
   }
 })();

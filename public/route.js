@@ -12,7 +12,11 @@
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
+<<<<<<< HEAD
           pageTitle: 'Funeraria'
+=======
+          pageTitle: 'El Vals de Los Muertos'
+>>>>>>> origin/Aaron
         }
       })
 
@@ -96,7 +100,7 @@
       })
 
       .state('registroRetoques', {
-        url: '/retoques',
+        url: '/registroRetoques',
         templateUrl: './components/retoques/registroRetoques.view.html',
         data: {
           pageTitle: 'Retoques'
