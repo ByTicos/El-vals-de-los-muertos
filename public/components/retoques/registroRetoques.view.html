@@ -1,48 +1,51 @@
-<h1>Retoques del muerto {{vm.infoMuertos}}</h1>
+<div class="">
 
-<div class="col-4 my-3">
+  <section>
+   <div class="pt-5">
+    <form  ng-submit="vm.agregarNuevoRetoque(vm.nuevoRetoque)">
 
-  <form ng-submit="vm.registrarRetoque(vm.nuevoRetoque)">
+      <div class="form-control">
+        <label for="">ID</label>
+        <input type="number" ng-model="vm.nuevoRetoque.id"  value="">
+      </div>
 
-    <div class="form-group">
-      <label for="">Número de Retoque</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.tipo">
-    </div>
+      <div class="form-control">
+        <label for="">Nombre</label>
+        <input type="text" ng-model="vm.nuevoRetoque.nombre"  value="">
+      </div>
 
-    <div class="form-group">
-      <label for="">Nombre</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.nombre">
-    </div>
-
-    <div class="form-group">
-      <label for="">Costo en $</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.costo">
-    </div>
+      <div class="form-control">
+          <label for="">Costo</label>
+          <input type="number" ng-model="vm.nuevoRetoque.costo"  value="">
+        </div>
 
 
-    <button type="submit" class="btn btn-success">Registrar Retoque</button>
+      <button type="submit" name="button">Registrar Retoque</button>
+    </form>
+  </div>
 
-    <button type="button" class="btn btn-danger" ng-click="vm.volver()">Regresar</button>
+  <div class="pt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="retoque in vm.listaRetoques">
+          <td>{{retoque.id}}</td>
+          <td>{{retoque.nombre}}</td>
+          <td>{{retoque.costo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-  </form>
 
-</div>
+<div ng-include="'./components/includes/_footer.html'"></div>
+  </section>
 
-<div class="col-9">
-<table class="table">
-  <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Nombre</th>
-        <th>Costo</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="retoque in vm.listaRetoques">
-      <td>{{retoque.tipo}}</td>
-      <td>{{retoque.nombre}}</td>
-      <td>{{retoque.costo}}</td>
-    </tr>
-  </tbody>
-</table>
 </div>

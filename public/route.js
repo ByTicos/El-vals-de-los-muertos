@@ -12,7 +12,7 @@
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
-          pageTitle: 'Arquitectura'
+          pageTitle: 'El Vals de Los Muertos'
         }
       })
 
@@ -78,13 +78,10 @@
       })
 
       .state('registroRetoques', {
-        url: '/retoques',
+        url: '/registroRetoques',
         templateUrl: './components/retoques/registroRetoques.view.html',
         data: {
           pageTitle: 'Retoques'
-        },
-        params: {
-          objVehiculoTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
