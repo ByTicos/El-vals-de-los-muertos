@@ -88,6 +88,41 @@
 --------------------------------*/
 #services {
   padding: 30px 0 0 0;
+  background-image: url(../../sources/img/fondo-02.jpg);
+  width: 1300px;
+
+
+}
+
+.imagenheader{
+  width: 1295px;
+
+}
+
+
+#services .caja {
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background-image: url(../../sources/img/muertos.png);  
+  transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
+
+}
+
+#services .caja2 {
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background-image: url(../../sources/img/entierros.png);  
+  transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
 }
 
 #services .box {
@@ -171,6 +206,7 @@
   text-align: center;
   min-height: 350px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: black;
 }
 
 @media (max-width: 767px) {
@@ -212,11 +248,13 @@
   display: inline-block;
   max-width: 100%;
   width: 37px;
+  color: blanchedalmond;
 }
 
 #testimonials .testimonial-item p {
   font-style: italic;
   margin: 0 auto 15px auto;
+  color: blanchedalmond;
 }
 
 #testimonials .owl-nav, #testimonials .owl-dots {
@@ -289,6 +327,7 @@
 --------------------------------*/
 #contact {
   padding: 30px 0;
+  background-color: #3B1E16;
 }
 
 #contact .contact-info {
@@ -305,7 +344,7 @@
 
 #contact .contact-info address, #contact .contact-info p {
   margin-bottom: 0;
-  color: #000;
+  color: white;
 }
 
 #contact .contact-info h3 {
@@ -317,7 +356,7 @@
 }
 
 #contact .contact-info a {
-  color: #000;
+  color: white;
 }
 
 #contact .contact-info a:hover {
@@ -352,3 +391,28 @@
   }
 }
 
+/*------ CSS para los ojos */
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:transparent;
+}
+
+.bg {
+	no-repeat center center relative; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.colorfooter1{
+  color: #ddd;
+  text-align: center;
+}
+
+.servicescolor{
+  text-align: center;
+}
