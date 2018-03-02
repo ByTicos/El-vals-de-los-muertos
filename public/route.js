@@ -12,11 +12,7 @@
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
-<<<<<<< HEAD
-          pageTitle: 'Funeraria'
-=======
           pageTitle: 'El Vals de Los Muertos'
->>>>>>> origin/Aaron
         }
       })
 

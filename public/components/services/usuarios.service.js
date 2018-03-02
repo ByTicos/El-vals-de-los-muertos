@@ -21,14 +21,8 @@
     let publicAPI = {
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
-<<<<<<< HEAD
-      addMuerto : _addMuerto,
-      getMuerto : _getMuerto,
-      getAllMuertos: _getAllMuertos
-=======
       agregarMuerto : _agregarMuerto,
       obtenerMuerto : _obtenerMuerto
->>>>>>> origin/Katherine
     }
     return publicAPI;
 
@@ -81,39 +75,6 @@ function _obtenerMuerto () {
   let listaMuertos = [];
   let listaMuertosLocal = JSON.parse (localStorage.getItem ('muertosLS'));
 
-<<<<<<< HEAD
-function _getMuerto(objUsuario){
-      let listaUsuarios = _getUsuarios();
-      let listaMuertos = [];
-      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
-      for( let i=0; i<listaUsuarios.length;i++){
-        if(sesion.cedula == listaUsuarios[i].obtenerCedula()){
-          if(listaUsuarios[i].obtenerMuertos() != null){
-            listaMuertos = listaUsuarios[i].obtenerMuertos();
-          }
-        }
-      }
-      return listaMuertos;
-    }
-  function _getAllMuertos(){
-    let listaUsuarios = _getUsuarios();
-    let listaMuertos = [];
-    for (let i = 0; i < listaUsuarios.length; i++){
-      let listaMuertosTemp = listaUsuarios[i].obtenerMuertos();
-      if(listaMuertosTemp != []){
-        let muertoTemp = {};
-        for(let j = 0; j < listaMuertosTemp.length; j++){
-          muertoTemp = listaMuertosTemp[j];
-          listaMuertos.push(muertoTemp);
-        }
-      }
-    }
-    return listaMuertos;
-  }
-    function actualizarLocal(plistaActualizada) {
-     localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
-   }
-=======
   if (listaMuertosLocal == null) {
     listaMuertos = [];
   } else {
@@ -123,7 +84,6 @@ function _getMuerto(objUsuario){
       listaMuertos.push (objMuerto);
     });
   }
->>>>>>> origin/Katherine
 
   return listaMuertos;
 }
