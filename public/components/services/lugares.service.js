@@ -44,7 +44,7 @@
       }else {
         listaLugaresLocal.forEach(obj => {
 
-          let objLugar = new Lugares(obj.id, obj.nombre);
+          let objLugar = new Lugares(obj.id, obj.lugar);
 
           listaLugares.push(objLugar);
         });

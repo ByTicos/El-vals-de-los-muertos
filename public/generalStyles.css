@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 .bg-black{
   background: #000;
 }
 
+
+.nav-item {
+  padding-top: 20px;
+  font-family: 'Dosis', sans-serif;
+}
 .navbar-nav {
   text-align: center;
   margin: 0 auto;
