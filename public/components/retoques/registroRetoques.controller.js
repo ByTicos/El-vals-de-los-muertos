@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (() => {
   'use strict';
   angular
@@ -59,3 +60,5 @@
     }
   }
 })();
+=======
+>>>>>>> origin/Katherine

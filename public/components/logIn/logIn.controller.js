@@ -16,12 +16,16 @@
 
       if(inicioCorrecto == true){
         swal("Datos correctos", "Sesion iniciada correctamente", "success");
+<<<<<<< HEAD
           if(pCredenciales.nombreUsuario == 'admin'){
             $location.path('/admin');
           }
           else{
             $location.path('/muertos');
           }
+=======
+        $location.path('/users');
+>>>>>>> origin/Katherine
       }
       else{
         swal("Datos erroneos", "asfasf", "error");

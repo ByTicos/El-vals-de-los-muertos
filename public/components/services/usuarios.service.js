@@ -21,9 +21,14 @@
     let publicAPI = {
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
+<<<<<<< HEAD
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos
+=======
+      agregarMuerto : _agregarMuerto,
+      obtenerMuerto : _obtenerMuerto
+>>>>>>> origin/Katherine
     }
     return publicAPI;
 
@@ -41,7 +46,7 @@
     }
 
     // Funcion que trae todos los usuarios del localStorage y a partir de esos datos vuelve a crear un arreglo con todos los objetos de tipo usuario
-      function _getUsuarios(){
+    function _getUsuarios(){
       let listaUsuarios = [];
       let listaUsuariosLocal = JSON.parse(localStorage.getItem("usuariosLS"));
 
@@ -49,35 +54,34 @@
         listaUsuarios = [];
       }else{
         listaUsuariosLocal.forEach(obj => {
-          let objUsuario = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
 
-          obj.listaMuertos.forEach(objMuerto =>{
-            let objMuertoTemp = new Muerto(objMuerto.apodo, objMuerto.edad, objMuerto.genero, objMuerto.tamanno);
-            objUsuario.agregarmuerto(objMuertoTemp);
-          })
-          listaUsuarios.push(objUsuario);
+          let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
+
+          listaUsuarios.push(objUsuarios);
         });
       }
 
       return listaUsuarios;
     }
-    function _addMuerto (pnuevoMuerto) {
-      let listaUsuarios = _getUsuarios();
-      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
+    function _agregarMuerto (pnuevoMuerto) {
+  let listaMuertos = _obtenerMuerto ();
+  //let respuesta = true;
+  listaMuertos.push (pnuevoMuerto);
 
-      for(let i = 0; i < listaUsuarios.length; i++){
-        if (sesion.cedula == listaUsuarios[i].obtenerCedula()){
-          listaUsuarios[i].agregarmuerto(pnuevoMuerto);
-        }
-      }
+  localStorage.setItem ('muertosLS', JSON.stringify (listaMuertos));
 
-      actualizarLocal(listaUsuarios);
-  
-};
+  /*
+      asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
+        respuesta = response;
+      });
+      return respuesta;*/
+}
 
+function _obtenerMuerto () {
+  let listaMuertos = [];
+  let listaMuertosLocal = JSON.parse (localStorage.getItem ('muertosLS'));
 
-
-
+<<<<<<< HEAD
 function _getMuerto(objUsuario){
       let listaUsuarios = _getUsuarios();
       let listaMuertos = [];
@@ -109,7 +113,20 @@ function _getMuerto(objUsuario){
     function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
+=======
+  if (listaMuertosLocal == null) {
+    listaMuertos = [];
+  } else {
+    listaMuertosLocal.forEach (obj => {
+      let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
 
+      listaMuertos.push (objMuerto);
+    });
+  }
+>>>>>>> origin/Katherine
+
+  return listaMuertos;
+}
 
   }
 })();
