@@ -20,6 +20,7 @@
   margin-bottom: 70px;
 }
 
+
 /* Sobre nosotros Section
 --------------------------------*/
 #about {
@@ -33,6 +34,7 @@
 #about .about-img img {
   margin-left: -15px;
   max-width: 100%;
+  width: 80%;
 }
 
 @media (max-width: 768px) {
@@ -88,15 +90,87 @@
 --------------------------------*/
 #services {
   padding: 30px 0 0 0;
+  background-image: url(../../sources/img/Fondoservicios-02.jpg);
+
+
 }
 
-#services .box {
+.Imagenmuertos{
+}
+
+
+#services .caja {
   padding: 40px;
   margin-bottom: 40px;
   box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
-  background: #fff;
+  background-image: url(../../sources/img/muertos.png);  
   transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
+
 }
+
+#services .caja2 {
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background-image: url(../../sources/img/entierros.png);  
+  transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
+}
+
+#services .caja3 {
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background-image: url(../../sources/img/retoques.png);  
+  transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
+}
+
+#services .caja4 {
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background-image: url(../../sources/img/infierno.png);  
+  transition: 0.4s;
+  height: 228px;
+  margin-top: 40px;
+  color: white;
+  width: 453px;
+}
+
+.description {
+  font-size: 14px;
+  margin-left: 100px;
+  margin-bottom: 0;
+  line-height: 24px;
+  margin-top: 40px;
+  color: white;
+}
+
+.TextoServicios {
+  font-size: 14px;
+  margin-bottom: 0;
+  line-height: 24px;
+  margin-top: 40px;
+  color: white;
+}
+
+.imagenservicios {
+  align-content: center;
+  width: 100%;
+  margin-top: -130px;
+}
+
 
 #services .box:hover {
   box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
@@ -141,6 +215,8 @@
   margin-left: 100px;
   margin-bottom: 0;
   line-height: 24px;
+  margin-top: 40px;
+  color: white;
 }
 
 @media (max-width: 767px) {
@@ -240,7 +316,7 @@
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  background: #081e5b;
+  background: #3B1E16;
   background-size: cover;
   padding: 40px 0;
 }
@@ -352,3 +428,19 @@
   }
 }
 
+/*------ CSS para los ojos */
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:transparent;
+}
+
+.bg {
+	no-repeat center center relative; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

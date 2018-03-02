@@ -6,6 +6,13 @@ TODO.md
 package.json
 <<<<<<< HEAD
 <<<<<<< HEAD
+.DS_Store
+TODO.md
+TODO.md
+=======
+=======
+>>>>>>> master
+<<<<<<< HEAD
 TODO.md
 public/sources/video/rain.mp4
 public/components/includes/_footer.html
@@ -14,9 +21,16 @@ public/clases.js
 .DS_Store
 TODO.md
 >>>>>>> Jeremy
+<<<<<<< HEAD
+>>>>>>> master
+=======
 =======
 .DS_Store
 TODO.md
 TODO.md
 >>>>>>> Jeremy
+<<<<<<< HEAD
+>>>>>>> master
+=======
 *.json
+>>>>>>> Katherine

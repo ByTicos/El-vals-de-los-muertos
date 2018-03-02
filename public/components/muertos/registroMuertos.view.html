@@ -2,7 +2,7 @@
 
 <section class="container">
   <div class="pt-5">
-    <form class="form-horizontal row" ng-submit="vm.agregarnuevoMuerto(vm.nuevoMuerto)">
+    <form class="form-horizontal row" ng-submit="vm.registrarMuerto(vm.nuevoMuerto)">
 <div class="col-md-6">
 <div class="form-group">
   <label for="">Apodo</label>
@@ -39,8 +39,9 @@
           <th>Genero</th>
           <th>Tamaño</th>
           <th>Entierro</th>
-          
-          
+          <th>Retoques</th>
+          <th>Fiesta</th>
+          <th>Desactivar</th>
         </tr>
       </thead>
       <tbody>
@@ -52,7 +53,15 @@
           <td>
             <button type="button">Entierros</button>
           </td>
-         
+          <td>
+            <button type="button">Retoques</button>
+          </td>
+          <td>
+            <button type="button">Fiesta</button>
+          </td>
+          <td>
+            <button type="button">Desactivar</button>
+          </td>
         </tr>
       </tbody>
     </table>
