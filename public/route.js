@@ -12,8 +12,23 @@
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
-          pageTitle: 'Arquitectura'
+          pageTitle: 'Funeraria'
         }
+      })
+
+      .state('admin', {
+        url: '/admin',
+        templateUrl: './components/admin/admin.view.html',
+        data:{
+          pageTitle: 'Registro admin'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/admin/admin.controller.js')
+          }]
+        },
+        controller: 'controladorAdministrador',
+        controllerAs: 'vm'
       })
 
       .state('usuarios', {

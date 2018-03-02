@@ -9,6 +9,7 @@
   function controladorRegistroMuerto($stateParams,$state,servicioUsuarios) {
     let vm = this;
 
+<<<<<<< HEAD
     if(!$stateParams.objUsuarioTemp){
       $state.go('usuarios');
     }
@@ -22,19 +23,34 @@
     //listarMuertos();
 
     //vm.listaMuertos = servicioUsuarios.getMuerto(objUsuario);
+=======
+
+    
+
+    vm.nuevoMuerto = {};
+
+    listarMuertos();
+
+>>>>>>> master
     
     vm.registrarMuerto = (pnuevoMuerto) =>{
      
 
      let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
 
+<<<<<<< HEAD
      servicioUsuarios.addMuerto(objNuevoMuerto,objUsuario);
 
      $state.go('usuarios');
+=======
+     servicioUsuarios.addMuerto(objNuevoMuerto);
+
+>>>>>>> master
 
      swal("Registro exitoso", "Se ha registrado correctamente el difunto", "success", {
         button: "Aceptar",
       });
+<<<<<<< HEAD
      //listarMuertos ();
 
      vm.nuevoMuerto = null;
@@ -43,5 +59,17 @@
     /*  function listarMuertos() {
       vm.listaMuertos = servicioUsuarios.getMuerto();
     } */
+=======
+     listarMuertos ();
+
+     vm.nuevoMuerto = null;
+    
+    }
+    function listarMuertos(){
+    vm.listaMuertos = servicioUsuarios.getMuerto();
+      
+    }
+     
+>>>>>>> master
   }
 })(); 

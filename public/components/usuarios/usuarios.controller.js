@@ -4,9 +4,15 @@
   .module('funeraria')
   .controller('controladorUsuarios', controladorUsuarios);
 
+<<<<<<< HEAD
   controladorUsuarios.$inject = ['$stateParams','$state','$location','servicioUsuarios'];
 
   function controladorUsuarios( $stateParams, $state,$location, servicioUsuarios){
+=======
+  controladorUsuarios.$inject = ['$state','$location','servicioUsuarios'];
+
+  function controladorUsuarios(  $state,$location, servicioUsuarios){
+>>>>>>> master
     let vm = this;
 
     vm.nuevoUsuario = {};
@@ -15,8 +21,8 @@
     listarUsuarios();
     // Función que es llamda desde el html para registra un nuevo usuario
     vm.registrarUsuario = (pNuevoUsuario) => {
-
       console.log(pNuevoUsuario);
+      
 
       // Tomamos el objeto sin formato y lo comvertimos en una instancia de la clase cliente
       let objNuevoUsuario = new Cliente(pNuevoUsuario.foto, pNuevoUsuario.nombre, pNuevoUsuario.apellido, pNuevoUsuario.cedula, pNuevoUsuario.provincia,  pNuevoUsuario.canton,  pNuevoUsuario.distrito,  pNuevoUsuario.ubicacion,  pNuevoUsuario.fechaNacimiento,  pNuevoUsuario.edad,  pNuevoUsuario.genero,  pNuevoUsuario.nombreUsuario,  pNuevoUsuario.contrasenna,  pNuevoUsuario.confirmarContrasenna);
@@ -46,16 +52,19 @@
       listarUsuarios();
     }
 
+<<<<<<< HEAD
     vm.registrarMuerto = (pUsuario) => {
     //  console.log(pUsuario);
      $state.go('stateMuertos', { objUsuarioTemp : JSON.stringify(pUsuario)});
     }
+=======
+   
+>>>>>>> master
     
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.getUsuarios();
     }
 
-    
 
   }
 })();
