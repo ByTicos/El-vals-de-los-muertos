@@ -14,9 +14,8 @@
 
     vm.nuevoMuerto = {};
 
-    //listarMuertos();
+    listarMuertos();
 
-    vm.listaMuertos = servicioUsuarios.getMuerto();
     
     vm.registrarMuerto = (pnuevoMuerto) =>{
      
@@ -29,10 +28,14 @@
      swal("Registro exitoso", "Se ha registrado correctamente el difunto", "success", {
         button: "Aceptar",
       });
-     //listarMuertos ();
+     listarMuertos ();
 
      vm.nuevoMuerto = null;
     
+    }
+    function listarMuertos(){
+    vm.listaMuertos = servicioUsuarios.getMuerto();
+      
     }
      
   }
