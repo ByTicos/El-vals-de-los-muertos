@@ -17,13 +17,10 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
-<<<<<<< HEAD
-=======
   obtenerMuertos(){
     return this.listaMuertos;
 
   }
->>>>>>> master
   agregarmuerto(pnuevoMuerto){
     this.listaMuertos.push(pnuevoMuerto);
   }

@@ -90,23 +90,15 @@
 --------------------------------*/
 #services {
   padding: 30px 0 0 0;
-<<<<<<< HEAD
-  background-image: url(../../sources/img/Fondoservicios-02.jpg);
-=======
   background-image: url(../../sources/img/fondo-02.jpg);
   width: 1300px;
->>>>>>> master
 
 
 }
 
-<<<<<<< HEAD
-.Imagenmuertos{
-=======
 .imagenheader{
   width: 1295px;
 
->>>>>>> master
 }
 
 
