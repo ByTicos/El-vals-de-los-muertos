@@ -29,7 +29,7 @@
         let respuesta = true;
         listaRetoques.push(pnuevoRetoque);
 
-        asyncLocalStorage.setItem('retoquesLS', listaretoques).then((response) =>{
+        asyncLocalStorage.setItem('retoquesLS', listaRetoques).then((response) =>{
           respuesta = response;
         });
         return respuesta;
