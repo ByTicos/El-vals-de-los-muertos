@@ -53,10 +53,6 @@ class Muerto{
     this.entierro=pEntierro;
   }
 
-   registrarRetoques(pRetoques){
-    this.listaRetoques.push(pRetoques);
-  }
-
   registrarFiesta(pFiesta){
     this.fiesta=pFiesta;
   }

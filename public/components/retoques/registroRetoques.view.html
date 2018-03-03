@@ -1,56 +1,20 @@
-<div class="">
+<div ng-include = "'./components/includes/_header.html'"></div>
 
-  <section>
-   <div class="pt-5">
-    <form  ng-submit="vm.agregarNuevoRetoque(vm.nuevoRetoque)">
+<div class="container-fluid">
 
-      <div class="form-control">
-        <label for="">ID</label>
-        <input type="number" ng-model="vm.nuevoRetoque.id"  value="">
-      </div>
+    <section>
+        <div class="pt-5">
+         <form  ng-submit="vm.agregarRetoqueaMuerto(vm.nuevoRetoque)">
 
-      <div class="form-control">
-        <label for="">Nombre</label>
-        <input type="text" ng-model="vm.nuevoRetoque.nombre"  value="">
-      </div>
+            <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
+                <option value="">Seleccione su retoque</option>
+                <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
+              </select>
 
-      <div class="form-control">
-          <label for="">Costo</label>
-          <input type="number" ng-model="vm.nuevoRetoque.costo"  value="">
-        </div>
-
-
-      <button type="submit" name="button">Registrar Retoque</button>
-    </form>
-  </div>
-
-  <select name="dropdown" id="dropdown" >
-    <option value="">Seleccione su retoque</option>
-    <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.nombre}} {{retoque.costo}}</option>
-  </select>
-
-
-  <div class="pt-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Costo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="retoque in vm.listaRetoques">
-          <td>{{retoque.id}}</td>
-          <td>{{retoque.nombre}}</td>
-          <td>{{retoque.costo}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-
+           <button type="submit" name="button">Agregar Retoque</button>
+         </form>
+       </div>
+  
 <div ng-include="'./components/includes/_footer.html'"></div>
   </section>
 
