@@ -12,7 +12,7 @@
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
-          pageTitle: 'Funeraria'
+          pageTitle: 'El Vals de Los Muertos'
         }
       })
 
@@ -62,7 +62,7 @@
       })
 
 //registro de muertos
-      .state('stateMuertos', {
+      .state('registrarMuertos', {
         url: '/muertos',
         templateUrl: './components/muertos/registroMuertos.view.html',
         data:{
@@ -96,13 +96,13 @@
       })
 
       .state('registroRetoques', {
-        url: '/retoques',
+        url: '/registroRetoques',
         templateUrl: './components/retoques/registroRetoques.view.html',
         data: {
           pageTitle: 'Retoques'
         },
         params: {
-          objVehiculoTemp: ''
+          objMuertoTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {

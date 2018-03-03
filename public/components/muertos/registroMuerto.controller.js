@@ -4,39 +4,34 @@
   .module('funeraria')
   .controller('controladorRegistroMuerto', controladorRegistroMuerto);
 
-  controladorRegistroMuerto.$inject = ['$stateParams','$state','servicioUsuarios'];
+  controladorRegistroMuerto.$inject = ['servicioUsuarios'];
 
-  function controladorRegistroMuerto($stateParams,$state,servicioUsuarios) {
+  function controladorRegistroMuerto(servicioUsuarios) {
     let vm = this;
-
-
-    
-
     vm.nuevoMuerto = {};
-
+    vm.listaMuertos=listarMuertos();
     listarMuertos();
 
-    
-    vm.registrarMuerto = (pnuevoMuerto) =>{
-     
+   
 
-     let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
+    vm.agregarnuevoMuerto = (pnuevoMuerto) =>{
+     console.log(pnuevoMuerto);
 
-     servicioUsuarios.addMuerto(objNuevoMuerto);
+     let objNuevoMuerto = new Muerto(pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
 
+     console.log('objeto con nuevo muerto');
+     console.log(objNuevoMuerto);
 
-     swal("Registro exitoso", "Se ha registrado correctamente el difunto", "success", {
-        button: "Aceptar",
-      });
-     listarMuertos ();
+     servicioUsuarios.agregarMuerto(objNuevoMuerto);
+
+     swal("en todas","ahi vamos", "success",{ button:"aceptar",});
 
      vm.nuevoMuerto = null;
     
+    listarMuertos();
     }
-    function listarMuertos(){
-    vm.listaMuertos = servicioUsuarios.getMuerto();
-      
+     function listarMuertos() {
+      vm.listaMuertos = servicioUsuarios.obtenerMuerto();
     }
-     
   }
 })(); 

@@ -1,8 +1,8 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 
-<section class="container">
+<section class="container mt-5 pt-5">
   <div class="pt-5">
-    <form class="form-horizontal row" ng-submit="vm.registrarMuerto(vm.nuevoMuerto)">
+    <form class="form-horizontal row" ng-submit="vm.agregarnuevoMuerto(vm.nuevoMuerto)">
 <div class="col-md-6">
 <div class="form-group">
   <label for="">Apodo</label>
@@ -15,9 +15,14 @@
 </div>
 
 <div class="form-group">
-  <label for="">Genero</label>
-  <input class="form-control" type="text" ng-model="vm.nuevoMuerto.genero" required>
-</div>
+        <label for="">Genero</label>
+        <select class="form-control" ng-model="vm.nuevoMuerto.genero" required >
+            <option value="Masculino" selected>Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Indefinido">Indefinido</option>
+        </select>
+      </div>
+
 
 <div class="form-group">
   <label for="">Tamaño</label>
@@ -39,9 +44,8 @@
           <th>Genero</th>
           <th>Tamaño</th>
           <th>Entierro</th>
-          <th>Retoques</th>
-          <th>Fiesta</th>
-          <th>Desactivar</th>
+          
+          
         </tr>
       </thead>
       <tbody>
@@ -52,16 +56,9 @@
           <td>{{muerto.tamanno}}</td>
           <td>
             <button type="button">Entierros</button>
-          </td>
-          <td>
             <button type="button">Retoques</button>
           </td>
-          <td>
-            <button type="button">Fiesta</button>
-          </td>
-          <td>
-            <button type="button">Desactivar</button>
-          </td>
+         
         </tr>
       </tbody>
     </table>

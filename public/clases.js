@@ -17,12 +17,12 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
+
   obtenerMuertos(){
     return this.listaMuertos;
-
   }
-  agregarmuerto(pnuevoMuerto){
-    this.listaMuertos.push(pnuevoMuerto);
+  registrarMuerto(pMuerto){
+    this.listaMuertos.push(pMuerto);
   }
   obtenerNombreCompleto(){
     return `${this.nombre} ${this.apellido}`;
@@ -53,10 +53,6 @@ class Muerto{
     this.entierro=pEntierro;
   }
 
-   registrarRetoques(pRetoques){
-    this.listaRetoques.push(pRetoques);
-  }
-
   registrarFiesta(pFiesta){
     this.fiesta.push(pFiesta);
   }
@@ -64,7 +60,12 @@ class Muerto{
   getFiestas(){
     return this.fiesta;
   }
- 
+  obtenerNombreUsuario(){
+    return this.nombreUsuario;
+  }
+  obtenerContrasenna(){
+    return this.contrasenna;
+  }
 }
 
 class Entierro {
@@ -83,8 +84,8 @@ class Entierro {
 }
 
 class Retoques {
-  constructor (pTipo,pNombre,pCosto) {
-    this.tipo = pTipo;
+  constructor (pId,pNombre,pCosto) {
+    this.id = pId;
     this.nombre=pNombre;
     this.costo=pCosto;
 

@@ -22,6 +22,7 @@
           else{
             $location.path('/muertos');
           }
+          
       }
       else{
         swal("Datos erroneos", "asfasf", "error");

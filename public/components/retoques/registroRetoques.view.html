@@ -1,48 +1,21 @@
-<h1>Retoques del muerto {{vm.infoMuertos}}</h1>
+<div ng-include = "'./components/includes/_header.html'"></div>
 
-<div class="col-4 my-3">
+<div class="container-fluid">
 
-  <form ng-submit="vm.registrarRetoque(vm.nuevoRetoque)">
+    <section>
+        <div class="pt-5">
+         <form  ng-submit="vm.agregarRetoqueaMuerto(vm.nuevoRetoque)">
 
-    <div class="form-group">
-      <label for="">Número de Retoque</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.tipo">
-    </div>
+            <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
+                <option value="">Seleccione su retoque</option>
+                <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
+              </select>
 
-    <div class="form-group">
-      <label for="">Nombre</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.nombre">
-    </div>
+           <button type="submit" name="button">Agregar Retoque</button>
+         </form>
+       </div>
+  
+<div ng-include="'./components/includes/_footer.html'"></div>
+  </section>
 
-    <div class="form-group">
-      <label for="">Costo en $</label>
-      <input type="text" class="form-control" ng-model="vm.nuevoRetoque.costo">
-    </div>
-
-
-    <button type="submit" class="btn btn-success">Registrar Retoque</button>
-
-    <button type="button" class="btn btn-danger" ng-click="vm.volver()">Regresar</button>
-
-  </form>
-
-</div>
-
-<div class="col-9">
-<table class="table">
-  <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Nombre</th>
-        <th>Costo</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="retoque in vm.listaRetoques">
-      <td>{{retoque.tipo}}</td>
-      <td>{{retoque.nombre}}</td>
-      <td>{{retoque.costo}}</td>
-    </tr>
-  </tbody>
-</table>
 </div>
