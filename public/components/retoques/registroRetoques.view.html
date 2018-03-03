@@ -24,6 +24,12 @@
     </form>
   </div>
 
+  <select name="dropdown" id="dropdown" >
+    <option value="">Seleccione su retoque</option>
+    <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.nombre}} {{retoque.costo}}</option>
+  </select>
+
+
   <div class="pt-5">
     <table class="table">
       <thead>

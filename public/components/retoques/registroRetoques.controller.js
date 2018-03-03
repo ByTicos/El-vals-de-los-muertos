@@ -1,21 +1,14 @@
-  function controladorRetoques( $state, servicioUsuarios){
-    let vm = this;
+(() => {
+  'use strict';
+  angular
+  .module('funeraria')
+  .controller('controladorRegistroRetoques', controladorRegistroRetoques);
 
-    // aqui validamos que el paramatero exista, en caso de que no exista nos redijirá al estado anterior
-    
-    
-
-    let objMuerto = new Muerto (objSinFormatoVehiculo.apodo, objSinFormatoVehiculo.edad, objSinFormatoVehiculo.genero,objSinFormatoVehiculo.tamanno);
-
-    vm.infoMuertos = objMuerto.getInfoMuerto();
-
-    listaRetoques();
-
+  controladorRegistroRetoques.$inject = ['servicioRetoques']
 
   function controladorRegistroRetoques(servicioRetoques){
     let vm = this;
 
- 
     vm.nuevoRetoque = {};
     vm.listaRetoques = listarRetoques();
 
