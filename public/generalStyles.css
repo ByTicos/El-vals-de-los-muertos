@@ -20,6 +20,10 @@
   margin-bottom: 70px;
 }
 
+#bgimage img{
+  max-width: 100%;
+  width: 100%;
+}
 
 /* Sobre nosotros Section
 --------------------------------*/
@@ -34,7 +38,15 @@
 #about .about-img img {
   margin-left: -15px;
   max-width: 100%;
-  width: 80%;
+  width: 70%;
+}
+
+.padding {
+  padding-top: 45px;
+}
+
+.padding2 {
+padding-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -91,13 +103,13 @@
 #services {
   padding: 30px 0 0 0;
   background-image: url(../../sources/img/Seccionvals.jpg);
-  width: 1300px;
+  width: 100%;
 
 
 }
 
 .imagenheader{
-  width: 1295px;
+  width: 100%;
 
 }
 
@@ -460,3 +472,9 @@ canvas {
 .servicescolor{
   text-align: center;
 }
+
+#eyes {
+  position: absolute;
+}
+
+/***** estilos generales */

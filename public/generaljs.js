@@ -9,14 +9,14 @@ var my = 0;
 
 var eyes = [
    { 
-    'centerX' : 630,
-    'centerY' : 220,
-    'radius' : 50
+    'centerX' : 993,
+    'centerY' : 418,
+    'radius' : 25
   },
   { 
-    'centerX' : 780,
-    'centerY' : 230,
-    'radius' : 50
+    'centerX' : 918,
+    'centerY' : 410,
+    'radius' : 25
   }
 ]
 
@@ -50,14 +50,14 @@ function drawEye(eye) {
   // eye
   context.beginPath();
   context.arc(eye.centerX, eye.centerY, eye.radius, 0, Math.PI * 2);
-  context.fillStyle = "#fff";
+  context.fillStyle = "#fcdace";
   context.fill();
   context.closePath();
 
   // iris
   context.beginPath();
   context.arc(eye.centerX + eye.pupilX, eye.centerY + eye.pupilY, eye.radius / 2, 0, Math.PI * 2);
-  context.fillStyle = "#007";
+  context.fillStyle = "#fc0000";
   context.fill();
   context.closePath();
 

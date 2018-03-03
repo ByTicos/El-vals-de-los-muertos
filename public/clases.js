@@ -58,7 +58,11 @@ class Muerto{
   }
 
   registrarFiesta(pFiesta){
-    this.fiesta=pFiesta;
+    this.fiesta.push(pFiesta);
+  }
+
+  getFiestas(){
+    return this.fiesta;
   }
  
 }
