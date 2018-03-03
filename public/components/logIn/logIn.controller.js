@@ -16,7 +16,13 @@
 
       if(inicioCorrecto == true){
         swal("Datos correctos", "Sesion iniciada correctamente", "success");
-        $location.path('/users');
+          if(pCredenciales.nombreUsuario == 'admin'){
+            $location.path('/admin');
+          }
+          else{
+            $location.path('/muertos');
+          }
+          
       }
       else{
         swal("Datos erroneos", "asfasf", "error");

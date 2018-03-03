@@ -22,7 +22,8 @@
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
       agregarMuerto : _agregarMuerto,
-      obtenerMuerto : _obtenerMuerto
+      obtenerMuerto : _obtenerMuerto,
+      getAllMuertos: _getAllMuertos
     }
     return publicAPI;
 
@@ -85,6 +86,21 @@ function _obtenerMuerto () {
     });
   }
 
+  return listaMuertos;
+}
+function _getAllMuertos(){
+  let listaUsuarios = _getUsuarios();
+  let listaMuertos = [];
+  for (let i = 0; i < listaUsuarios.length; i++){
+    let listaMuertosTemp = listaUsuarios[i].obtenerMuertos();
+    if(listaMuertosTemp != []){
+      let muertoTemp = {};
+      for(let j = 0; j < listaMuertosTemp.length; j++){
+        muertoTemp = listaMuertosTemp[j];
+        listaMuertos.push(muertoTemp);
+      }
+    }
+  }
   return listaMuertos;
 }
 

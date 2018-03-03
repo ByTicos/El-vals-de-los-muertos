@@ -17,6 +17,10 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
+
+  obtenerMuertos(){
+    return this.listaMuertos;
+  }
   registrarMuerto(pMuerto){
     this.listaMuertos.push(pMuerto);
   }
