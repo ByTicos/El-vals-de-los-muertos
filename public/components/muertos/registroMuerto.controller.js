@@ -30,21 +30,6 @@
      vm.nuevoMuerto = null;
     
     }
-    
-     
-    
-
-    vm.editarMuertos=(pApodoMuerto,pEdadMuerto,pGeneroMuerto,pTamannoMuerto)=>{
-      document.querySelector('#apodo').value=pApodoMuerto;
-      document.querySelector ('#edad').value = pEdadMuerto;
-      document.querySelector('#genero').value=pGeneroMuerto;
-      document.querySelector('#tamanno').value=pTamannoMuerto;
-      document.querySelector('#btnRegistrar').classList.add('ocultar');
-    }
-
-    
-  
-
      function listarMuertos() {
       vm.listaMuertos = servicioUsuarios.getMuerto();
     }

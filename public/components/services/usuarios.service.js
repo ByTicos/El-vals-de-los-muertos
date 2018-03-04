@@ -74,12 +74,9 @@
         }
       }
 
-  /*
-      asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
-        respuesta = response;
-      });
-      return respuesta;*/
-}
+      actualizarLocal(listaUsuarios);
+  
+};
 
 function _getMuerto () {
  let listaUsuarios = _getUsuarios();
@@ -110,13 +107,8 @@ function _getAllMuertos(){
   }
   return listaMuertos;
 }
-
-
-
  function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
-
-}
-
+  }
 })();
