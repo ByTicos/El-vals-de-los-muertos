@@ -21,4 +21,9 @@ TODO.md
 >>>>>>> Jeremy
 *.json
 public/.DS_Store
+<<<<<<< HEAD
 .vscode/settings.json
+=======
+.DS_Store
+.DS_Store
+>>>>>>> Esteban

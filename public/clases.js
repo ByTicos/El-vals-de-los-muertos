@@ -56,9 +56,19 @@ class Muerto{
   registrarFiesta(pFiesta){
     this.fiesta=pFiesta;
   }
+
+  getFiestas(){
+    return this.fiesta;
+  }
   obtenerApodo(){
     return this.apodo;
   }
+<<<<<<< HEAD
+=======
+  obtenerApodo(){
+    return this.apodo;
+  }
+>>>>>>> Esteban
  
 }
 
@@ -74,7 +84,6 @@ class Entierro {
   registrarLugar(pLugar){
     this.lugar=pLugar;
   }
-
 }
 
 class Retoques {
@@ -83,16 +92,15 @@ class Retoques {
     this.nombre=pNombre;
     this.costo=pCosto;
 
-}
+  }
 }
 
 class Fiestas {
-  constructor (pFecha, pDuracion, pAnimador, pCosto) {
+  constructor (pFecha, pDuracion, pCosto, pAnimador) {
     this.fecha = pFecha;
     this.duracion = pDuracion;
-    this.animador = pAnimador;
     this.costo = pCosto;
-    this.animador = '';
+    this.animador = [];
   }
   registrarAnimador(pAnimador){
     this.animador=pAnimador;
@@ -107,10 +115,9 @@ class Lugares {
 }
 
 class Animadores {
-  constructor (pId, pNombre,pApellido, pCosto) {
+  constructor (pId, pApodo, pCosto) {
     this.id = pId;
-    this.nombre = pNombre;
-    this.apellido = pApellido;
+    this.apodo = pApodo;
     this.costo = pCosto;
   }
 }
