@@ -6,17 +6,17 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="">Apodo</label>
-          <input class="form-control" type="text" ng-model="vm.nuevoMuerto.apodo" required>
+          <input id="apodo" class="form-control" type="text" ng-model="vm.nuevoMuerto.apodo" required>
         </div>
 
         <div class="form-group">
           <label for="">Edad</label>
-          <input class="form-control" type="number" ng-model="vm.nuevoMuerto.edad" min="0" required>
+          <input id="edad" class="form-control" type="number" ng-model="vm.nuevoMuerto.edad" min="0" required>
         </div>
 
         <div class="form-group">
           <label for="">Genero</label>
-          <select class="form-control" ng-model="vm.nuevoMuerto.genero" required>
+          <select id="genero" class="form-control" ng-model="vm.nuevoMuerto.genero" required>
             <option value="Masculino" selected>Masculino</option>
             <option value="Femenino">Femenino</option>
             <option value="Indefinido">Indefinido</option>
@@ -26,49 +26,57 @@
 
         <div class="form-group">
           <label for="">Tamaño</label>
-          <input class="form-control" type="number" ng-model="vm.nuevoMuerto.tamanno" min="0" required>
+          <input id="tamanno" class="form-control" type="number" ng-model="vm.nuevoMuerto.tamanno" min="0" required>
         </div>
-        <button class="btn btn-primary" type="submit">Registrar</button>
-      </div>
+        <div>
+          <button id="btnRegistrar" class="btn btn-primary" type="submit">Registrar</button>
+        </div>
+        <div>
+          <button id="btnActualizar" class="btn btn-primary " type="button" ng-click="actualizar">Actualizar</button>
+        </div>
 
-<div></div>
 
     </form>
-  </div>
-  <div class="pt-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Apodo</th>
-          <th>Edad</th>
-          <th>Genero</th>
-          <th>Tamaño</th>
-          <th>Entierro</th>
-          <th>Retoques</th>
-          <th>Fiestas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="muerto in vm.listaMuertos">
-          <td>{{muerto.apodo}}</td>
-          <td>{{muerto.edad}}</td>
-          <td>{{muerto.genero}}</td>
-          <td>{{muerto.tamanno}}</td>
-          <td>
-            <button type="button">Entierros</button>
-          </td>
-            
-          <td>
+    </div>
+    <div class="pt-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Apodo</th>
+            <th>Edad</th>
+            <th>Genero</th>
+            <th>Tamaño</th>
+            <th>Entierro</th>
+            <th>Retoques</th>
+            <th>Fiestas</th>
+            <th>Editar</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="muerto in vm.listaMuertos">
+            <td>{{muerto.apodo}}</td>
+            <td>{{muerto.edad}}</td>
+            <td>{{muerto.genero}}</td>
+            <td>{{muerto.tamanno}}</td>
+            <td>
+              <button type="button">Entierros</button>
+            </td>
+
+            <td>
               <button type="button">Retoques</button>
-          </td>
-          <td>
+            </td>
+            <td>
               <button type="button">Fiestas</button>
-          </td>
+            </td>
+            <td>
+              <button type="button" ng-click="vm.editarMuertos(muerto.apodo,muerto.edad, muerto.genero,muerto.tamanno )">Editar</button>
+            </td>
 
 
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </section>
 <div ng-include="'./components/includes/_footer.html'"></div>

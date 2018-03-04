@@ -485,3 +485,10 @@ p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+
+.ocultar{
+  display: none;
+}
+.mostrar{
+  display: block;
+}
