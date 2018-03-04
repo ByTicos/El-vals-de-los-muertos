@@ -93,10 +93,9 @@ class Retoques {
 }
 
 class Fiestas {
-  constructor (pFecha, pDuracion, pAnimador, pCosto) {
+  constructor (pFecha, pDuracion, pCosto, pAnimador) {
     this.fecha = pFecha;
     this.duracion = pDuracion;
-    this.animador = pAnimador;
     this.costo = pCosto;
     this.animador = '';
   }
@@ -113,10 +112,9 @@ class Lugares {
 }
 
 class Animadores {
-  constructor (pId, pNombre,pApellido, pCosto) {
+  constructor (pId, pApodo, pCosto) {
     this.id = pId;
-    this.nombre = pNombre;
-    this.apellido = pApellido;
+    this.apodo = pApodo;
     this.costo = pCosto;
   }
 }

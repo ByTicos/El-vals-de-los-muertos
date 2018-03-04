@@ -9,13 +9,13 @@ var my = 0;
 
 var eyes = [
    { 
-    'centerX' : 993,
-    'centerY' : 418,
+    'centerX' : 920,
+    'centerY' : 410,
     'radius' : 25
   },
   { 
-    'centerX' : 918,
-    'centerY' : 410,
+    'centerX' : 1000,
+    'centerY' : 420,
     'radius' : 25
   }
 ]

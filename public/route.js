@@ -124,7 +124,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/fietas/registroFiestas.controller.js')
+            return $ocLazyLoad.load('./components/fiestas/registroFiestas.controller.js')
           }]
         },
         controller: 'controladorRegistroFiestas',
