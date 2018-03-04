@@ -11,6 +11,5 @@
     vm.listaRetoques = servicioRetoques.obtenerRetoques();
   }
 
-
   
 })();
