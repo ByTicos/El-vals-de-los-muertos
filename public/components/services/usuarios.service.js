@@ -57,6 +57,8 @@
 
             objUsuarios.registrarMuerto(objMuertoTemporal);
 
+          
+
           })
           listaUsuarios.push(objUsuarios);
         });
