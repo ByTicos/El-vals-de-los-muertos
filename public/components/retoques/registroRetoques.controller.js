@@ -9,6 +9,7 @@
   function controladorRegistroRetoques($stateParams, $state, servicioUsuarios, servicioRetoques){
     let vm = this;
     vm.listaRetoques = servicioRetoques.obtenerRetoques();
+<<<<<<< HEAD
 
     vm.agregarRetoqueaMuerto = (pRetoque) =>{
       console.log(pRetoque);
@@ -22,5 +23,10 @@
   }
 
 }
+=======
+  }
+
+
+>>>>>>> origin/Esteban
   
 })();
