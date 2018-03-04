@@ -420,13 +420,7 @@ canvas {
 	background-color:transparent;
 }
 
-.bg {
-	no-repeat center center relative; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 .colorfooter1{
   color: #ddd;
