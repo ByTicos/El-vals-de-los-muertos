@@ -1,20 +1,20 @@
 
 <div class="container-fluid">
 
-    <section>
-        <div class="pt-5">
-         <form  ng-submit="vm.agregarRetoqueaMuerto(vm.nuevoRetoque)">
+  <section>
+      <div class="pt-5">
+       <form  ng-submit="vm.agregarRetoqueaMuerto(vm.nuevoRetoque)">
 
-            <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
-                <option value="">Seleccione su retoque</option>
-                <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
-              </select>
+          <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
+              <option value="">Seleccione su retoque</option>
+              <option ng-repeat="retoque in vm.listaRetoques" value="{{retoque}}">{{retoque.nombre}} ${{retoque.costo}}</option>
+            </select>
 
-           <button type="submit" name="button">Agregar Retoque</button>
-         </form>
-       </div>
-  
+         <button type="submit" name="button">Agregar Retoque</button>
+       </form>
+     </div>
+
 <div ng-include="'./components/includes/_footer.html'"></div>
-  </section>
+</section>
 
 </div>
