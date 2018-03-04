@@ -21,8 +21,8 @@
     let publicAPI = {
       addUsuario : _addUsuario,
       getUsuarios : _getUsuarios,
-      addMuerto : _addMuerto,
-      getMuerto : _getMuerto,
+      agregarMuerto : _agregarMuerto,
+      obtenerMuerto : _obtenerMuerto,
       getAllMuertos: _getAllMuertos
     }
     return publicAPI;
@@ -52,18 +52,22 @@
 
           let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
 
+<<<<<<< HEAD
           obj.listaMuertos.forEach(objMuertos =>{
             let objMuertoTemporal = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
 
             objUsuarios.registrarMuerto(objMuertoTemporal);
 
           })
+=======
+>>>>>>> Esteban
           listaUsuarios.push(objUsuarios);
         });
       }
 
       return listaUsuarios;
     }
+<<<<<<< HEAD
      function _addMuerto (pnuevoMuerto) {
       let listaUsuarios = _getUsuarios();
       let sesion = JSON.parse(sessionStorage.getItem('sesion'));
@@ -73,11 +77,23 @@
           listaUsuarios[i].registrarMuerto(pnuevoMuerto);
         }
       }
+=======
+    function _agregarMuerto (pnuevoMuerto) {
+  let listaMuertos = _obtenerMuerto ();
+  //let respuesta = true;
+  listaMuertos.push (pnuevoMuerto);
 
-      actualizarLocal(listaUsuarios);
-  
-};
+  localStorage.setItem ('muertosLS', JSON.stringify (listaMuertos));
+>>>>>>> Esteban
 
+  /*
+      asyncLocalStorage.setItem('muertosLS', listaMuertos).then((response) =>{
+        respuesta = response;
+      });
+      return respuesta;*/
+}
+
+<<<<<<< HEAD
 function _getMuerto () {
  let listaUsuarios = _getUsuarios();
       let listaMuertos = [];
@@ -103,12 +119,68 @@ function _getAllMuertos(){
         muertoTemp = listaMuertosTemp[j];
         listaMuertos.push(muertoTemp);
       }
+=======
+function _obtenerMuerto () {
+  let listaMuertos = [];
+  let listaMuertosLocal = JSON.parse (localStorage.getItem ('muertosLS'));
+
+  if (listaMuertosLocal == null) {
+    listaMuertos = [];
+  } else {
+    listaMuertosLocal.forEach (obj => {
+      let objMuerto = new Muerto (obj.apodo, obj.edad, obj.genero, obj.tamanno);
+
+      listaMuertos.push (objMuerto);
+    });
+  }
+
+  return listaMuertos;
+}
+function _getAllMuertos(){
+  let listaUsuarios = _getUsuarios();
+  let listaMuertos = [];
+  for (let i = 0; i < listaUsuarios.length; i++){
+    let listaMuertosTemp = listaUsuarios[i].obtenerMuertos();
+    if(listaMuertosTemp != []){
+      let muertoTemp = {};
+      for(let j = 0; j < listaMuertosTemp.length; j++){
+        muertoTemp = listaMuertosTemp[j];
+        listaMuertos.push(muertoTemp);
+      }
+>>>>>>> Esteban
     }
   }
   return listaMuertos;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+function actualizarMuerto(plistaMuertosModificada) {
+  let listaUsuarios = _getUsuarios();
+      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
+
+      for(let i = 0; i < listaUsuarios.length; i++){
+        if (sesion.cedula == listaUsuarios[i].obtenerCedula()){
+          let listaMuertos=obtenerMuertos();
+          for(let i = 0; i < listaMuertos.length; i++){
+        if (plistaMuertosModificada[0] == listaMuertos[i][0]){
+          
+          listaMuertos[i][1]=plistaMuertosModificada[1];
+
+        }
+      }
+        }
+      }
+
+      actualizarLocal(listaUsuarios);
+}
+>>>>>>> Heiner
  function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
+=======
+
+>>>>>>> Esteban
   }
 })();

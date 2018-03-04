@@ -56,12 +56,10 @@ class Muerto{
   registrarFiesta(pFiesta){
     this.fiesta=pFiesta;
   }
-  obtenerNombreUsuario(){
-    return this.nombreUsuario;
+  obtenerApodo(){
+    return this.apodo;
   }
-  obtenerContrasenna(){
-    return this.contrasenna;
-  }
+ 
 }
 
 class Entierro {
