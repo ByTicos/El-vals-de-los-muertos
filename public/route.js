@@ -111,8 +111,27 @@
         },
         controller: 'controladorRegistroRetoques',
         controllerAs: 'vm'
+      })
+
+      .state('registroFiestas', {
+        url: '/fiestas',
+        templateUrl: './components/fiestas/registroFiestas.view.html',
+        data: {
+          pageTitle: 'Fiestas'
+        },
+        params: {
+          objMuertoTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/fiestas/registroFiestas.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroFiestas',
+        controllerAs: 'vm'
       });
 
     $urlRouterProvider.otherwise('/');
   };
+
 })();

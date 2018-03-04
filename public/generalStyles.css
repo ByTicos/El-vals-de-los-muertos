@@ -104,13 +104,22 @@
 #services {
   padding: 30px 0 0 0;
   background-image: url(../../sources/img/Seccionvals.jpg);
+<<<<<<< HEAD
   width: 1300px;
   height: 800px;
+=======
+  width: 100%;
+
+}
+
+#services::after {
+  opacity: 0.5;
+>>>>>>> Esteban
 
 }
 
 .imagenheader{
-  width: 1295px;
+  width: 100%;
 
 }
 
@@ -417,16 +426,13 @@ canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color:transparent;
+  background-color:transparent;
 }
 
-.bg {
-	no-repeat center center relative; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#eyes {
+  position: absolute;
 }
+
 
 .colorfooter1{
   color: #ddd;
@@ -490,4 +496,10 @@ canvas {
 p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
+<<<<<<< HEAD
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+=======
+text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);
+
+}
+>>>>>>> Esteban
