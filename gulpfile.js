@@ -4,7 +4,8 @@ const gulp = require('gulp'),
       connect = require('gulp-connect'),
       nodemon = require('gulp-nodemon'),
       todo = require('gulp-todo'),
-      browserSync = require('browser-sync');
+      browserSync = require('browser-sync')/*,
+      googleApis = require('googleapis')*/;
 
 gulp.task('connect', () => {
   connect.server({
@@ -43,7 +44,10 @@ gulp.task('dependencies', () => {
     './node_modules/popper.js/dist/popper.min.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
-
+/*
+  gulp.src(['./node_modules/googleapis/build/src/lib/api.js'])  
+    .pipe(gulp.dest('./public/lib/googleapis'));  
+*/
   gulp.src([
     './node_modules/sweetalert/dist/sweetalert.min.js',
   ])

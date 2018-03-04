@@ -21,3 +21,4 @@ TODO.md
 >>>>>>> Jeremy
 *.json
 public/.DS_Store
+.vscode/settings.json
