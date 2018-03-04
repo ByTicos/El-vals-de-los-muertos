@@ -123,7 +123,7 @@
 </section>
 
 
-<section id="Animadores">
+<section>
   <div class="">
     <h2>Crear Animadores</h2>
     {{vm}}
@@ -136,11 +136,11 @@
         </div>
         <div class="form-group">
           <label for="">Apodo</label>
-          <input class="form-control" type="text" ng-model="vm.nuevoAnimador.Apodo">
+          <input class="form-control" type="text" ng-model="vm.nuevoAnimador.apodo">
         </div>
         <div class="form-group">
           <label for="">Costo</label>
-          <input type="Number" class="form-control" ng-model="vm.nuevoAnimador.Costo">
+          <input type="Number" class="form-control" ng-model="vm.nuevoAnimador.costo">
         </div>
 
    <div class="container">
@@ -159,7 +159,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="animador in vm.listaUsuarios">
+          <tr ng-repeat="animador in vm.listaAnimador">
             <td>{{animador.id}}</td>
             <td>{{animador.apodo}}</td>
             <td>{{animador.costo}}</td>

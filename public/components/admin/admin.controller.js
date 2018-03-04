@@ -6,7 +6,7 @@
 
   controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques','servicioAnimadores']
 
-  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques,){
+  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques,servicioAnimadores){
     let vm = this;
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
@@ -46,9 +46,9 @@
     //Registro de Animadores
 
     vm.nuevoAnimador = {};
-    vm.listaAnimador = listaAnimador();
+    vm.listaAnimador = listarAnimador();
 
-    listaAnimador();
+    listarAnimador();
     // Función que es llamda desde el html para registra un nuevo usuario
     vm.registrarAnimador = (pnuevoAnimador) => {
 
@@ -62,7 +62,7 @@
       console.log(objNuevoAnimador);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioAdministrador.addAnimador(objNuevoAnimador);
+      servicioAnimadores.agregarAnimador(objNuevoAnimador);
 
       // Retroalimentación Visual para los usuarios
       swal("Registro exitoso", "El Animador ha sido registrado correctamente", "success", {
@@ -71,7 +71,11 @@
 
       // Se limpia el formulario
       vm.nuevoAnimador = null;
-      listaAnimador();
+      listarAnimador();
+    }
+
+    function listaAnimador() {
+      vm.listaAnimador = servicioAnimadores.obtenerAnimador();
     }
 
   }

@@ -8,31 +8,17 @@
 
   function servicioAnimadores ($log, $http){
 
-    const asyncLocalStorage = {
-      setItem: function (key, value) {
-          return Promise.resolve().then(() => {
-              let response = true;
-              localStorage.setItem(key, JSON.stringify(value));
-              return response
-          });
-      }
-    };
-
     let publicAPI = {
       agregarAnimador: _agregarAnimador,
       obtenerAnimador: _obtenerAnimador
-    };
+    }
+    
     return publicAPI;
 
     function _agregarAnimador(pnuevoAnimador) {
         let listaAnimador = _obtenerAnimador();
-        let respuesta = true;
         listaAnimador.push(pnuevoAnimador);
-
-        asyncLocalStorage.setItem('animadorLS', listaAnimador).then((response) =>{
-          respuesta = response;
-        });
-        return respuesta;
+        localStorage.setItem('animadorLS', JSON.stringify(listaAnimador));
     }
     
 
@@ -50,7 +36,10 @@
           listaAnimador.push(objAnimadores);
         });
       }
-      return objAnimadores;
+      return listaAnimador;
     }
+
+
   }
+
 })();
