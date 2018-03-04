@@ -4,17 +4,11 @@
     .module ('funeraria')
     .controller ('controladorRegistroMuerto', controladorRegistroMuerto);
 
-<<<<<<< HEAD
-  controladorRegistroMuerto.$inject = ['servicioUsuarios'];
-
-  function controladorRegistroMuerto($stateParams, $state, servicioUsuarios) {
-=======
   controladorRegistroMuerto.$inject = [
     '$stateParams',
     '$state',
     'servicioUsuarios',
   ];
->>>>>>> master
 
   function controladorRegistroMuerto ($stateParams, $state, servicioUsuarios) {
     let vm = this;
@@ -45,23 +39,6 @@
       vm.nuevoMuerto = null;
     };
 
-<<<<<<< HEAD
-     let objNuevoMuerto = new Muerto(pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
-
-     console.log('objeto con nuevo muerto');
-     console.log(objNuevoMuerto);
-
-     servicioUsuarios.agregarMuerto(objNuevoMuerto);
-
-     swal("en todas","ahi vamos", "success",{ button:"aceptar",});
-
-     vm.nuevoMuerto = null;
-    
-    listarMuertos();
-    }
-     function listarMuertos() {
-      vm.listaMuertos = servicioUsuarios.obtenerMuerto();
-=======
     vm.editarMuertos = (
       pApodoMuerto,
       pEdadMuerto,
@@ -93,7 +70,6 @@
 
     function listarMuertos () {
       vm.listaMuertos = servicioUsuarios.getMuerto ();
->>>>>>> master
     }
   }
 }) ();
