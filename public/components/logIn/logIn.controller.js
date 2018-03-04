@@ -11,6 +11,7 @@
 
     vm.usuario = {};
     
+    
     vm.inicarSesion = (pCredenciales) => {
       let inicioCorrecto = servicioLogin.inicioSesion(pCredenciales);
 
