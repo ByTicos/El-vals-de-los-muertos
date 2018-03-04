@@ -429,9 +429,13 @@ canvas {
   background-color:transparent;
 }
 
+<<<<<<< HEAD
 #eyes {
   position: absolute;
 }
+=======
+
+>>>>>>> Heiner
 
 
 .colorfooter1{
@@ -497,9 +501,20 @@ p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
 <<<<<<< HEAD
+<<<<<<< HEAD
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
 =======
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);
 
 }
 >>>>>>> Esteban
+=======
+text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+
+.ocultar{
+  display: none;
+}
+.mostrar{
+  display: block;
+}
+>>>>>>> Heiner
