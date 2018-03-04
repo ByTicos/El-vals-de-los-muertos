@@ -34,6 +34,7 @@
         });
         return respuesta;
     }
+    
 
     function _obtenerAnimador() {
       let listaAnimador = [];

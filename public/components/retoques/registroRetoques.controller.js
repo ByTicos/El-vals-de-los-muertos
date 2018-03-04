@@ -21,6 +21,6 @@
      console.log(objNuevoRetoque);
   }
 
-}
+  }
   
 })();

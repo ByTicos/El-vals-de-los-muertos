@@ -1,4 +1,4 @@
-
+<div ng-include = "'./components/includes/_header.html'"></div>
 
 <div class="container-fluid">
 
@@ -8,7 +8,7 @@
 
             <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
                 <option value="">Seleccione su retoque</option>
-                <option ng-repeat="retoque in vm.listaRetoques" value="{{retoque}}">{{retoque.nombre}} ${{retoque.costo}}</option>
+                <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
               </select>
 
            <button type="submit" name="button">Agregar Retoque</button>
