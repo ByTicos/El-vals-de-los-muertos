@@ -80,6 +80,24 @@
         controllerAs: 'vm'
       })
 
+      .state('registroEntierros', {
+        url: '/entierros',
+        templateUrl: './components/retoques/registroEntierros.view.html',
+        data: {
+          pageTitle: 'Entierros'
+        },
+        params: {
+          objMuertoTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/ent/registroEntierros.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroEntierros',
+        controllerAs: 'vm'
+      })
+
       .state('registroLugares', {
         url: '/registroLugares',
         templateUrl: './components/lugares/registroLugares.view.html',

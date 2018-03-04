@@ -104,12 +104,23 @@
 #services {
   padding: 30px 0 0 0;
   background-image: url(../../sources/img/Seccionvals.jpg);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  width: 1300px;
+  height: 800px;
+=======
+>>>>>>> master
   width: 100%;
 
 }
 
 #services::after {
   opacity: 0.5;
+<<<<<<< HEAD
+=======
+>>>>>>> Esteban
+>>>>>>> master
 
 }
 
@@ -422,11 +433,27 @@ canvas {
 	top: 0;
 	left: 0;
   background-color:transparent;
+<<<<<<< HEAD
+=======
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+#eyes {
+  position: absolute;
+>>>>>>> master
+}
+=======
+
+<<<<<<< HEAD
 #eyes {
   position: absolute;
 }
+=======
+>>>>>>> Heiner
+=======
+>>>>>>> Jeremy
+>>>>>>> master
 
 
 .colorfooter1{
@@ -491,6 +518,27 @@ canvas {
 p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
+<<<<<<< HEAD
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);
 
 }
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+=======
+text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);
+
+}
+>>>>>>> Esteban
+=======
+text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+
+.ocultar{
+  display: none;
+}
+.mostrar{
+  display: block;
+}
+>>>>>>> Heiner
+>>>>>>> master

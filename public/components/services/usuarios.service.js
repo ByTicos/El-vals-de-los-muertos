@@ -110,8 +110,30 @@ function _getAllMuertos(){
   }
   return listaMuertos;
 }
+
+
+function actualizarMuerto(plistaMuertosModificada) {
+  let listaUsuarios = _getUsuarios();
+      let sesion = JSON.parse(sessionStorage.getItem('sesion'));
+
+      for(let i = 0; i < listaUsuarios.length; i++){
+        if (sesion.cedula == listaUsuarios[i].obtenerCedula()){
+          let listaMuertos=obtenerMuertos();
+          for(let i = 0; i < listaMuertos.length; i++){
+        if (plistaMuertosModificada[0] == listaMuertos[i][0]){
+          
+          listaMuertos[i][1]=plistaMuertosModificada[1];
+
+        }
+      }
+        }
+      }
+
+      actualizarLocal(listaUsuarios);
+}
  function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
+
   }
 })();

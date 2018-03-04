@@ -60,12 +60,10 @@ class Muerto{
   getFiestas(){
     return this.fiesta;
   }
-  obtenerNombreUsuario(){
-    return this.nombreUsuario;
+  obtenerApodo(){
+    return this.apodo;
   }
-  obtenerContrasenna(){
-    return this.contrasenna;
-  }
+ 
 }
 
 class Entierro {
