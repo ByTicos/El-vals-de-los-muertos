@@ -72,10 +72,4 @@
       vm.listaMuertos = servicioUsuarios.getMuerto ();
     }
   }
-<<<<<<< HEAD
 }) ();
-=======
-
-    
-})(); 
->>>>>>> Esteban
