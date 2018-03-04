@@ -33,7 +33,7 @@
         button: "Aceptar",
       });
 
-      vm.nuevoRetoque = null;
+      
       listarRetoques();
     }
 

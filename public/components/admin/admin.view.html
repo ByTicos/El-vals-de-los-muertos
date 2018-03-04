@@ -77,24 +77,24 @@
   </div>
 </div>
 
-<section>
+<section class="container mt-5 pt-5">
   <div class="pt-5">
     <legend>Registre Nuevos Retoques</legend>
-   <form  ng-submit="vm.agregarNuevoRetoque(vm.nuevoRetoque)">
+   <form  ng-submit="vm.agregarNuevoRetoque(vm.nuevoRetoque)" required>
 
      <div class="form-control">
        <label for="">ID</label>
-       <input type="number" ng-model="vm.nuevoRetoque.id"  value="">
+       <input type="number" ng-model="vm.nuevoRetoque.id" required>
      </div>
 
      <div class="form-control">
        <label for="">Nombre</label>
-       <input type="text" ng-model="vm.nuevoRetoque.nombre"  value="">
+       <input type="text" ng-model="vm.nuevoRetoque.nombre" required>
      </div>
 
      <div class="form-control">
          <label for="">Costo</label>
-         <input type="number" ng-model="vm.nuevoRetoque.costo"  value="">
+         <input type="number" ng-model="vm.nuevoRetoque.costo" required>
        </div>
 
 
