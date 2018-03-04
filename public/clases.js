@@ -54,7 +54,7 @@ class Muerto{
   }
 
   registrarFiesta(pFiesta){
-    this.fiesta.push(pFiesta);
+    this.fiesta=pFiesta;
   }
 
   getFiestas(){
@@ -66,6 +66,10 @@ class Muerto{
   obtenerContrasenna(){
     return this.contrasenna;
   }
+  obtenerApodo(){
+    return this.apodo;
+  }
+ 
 }
 
 class Entierro {
@@ -80,7 +84,6 @@ class Entierro {
   registrarLugar(pLugar){
     this.lugar=pLugar;
   }
-
 }
 
 class Retoques {
@@ -89,7 +92,7 @@ class Retoques {
     this.nombre=pNombre;
     this.costo=pCosto;
 
-}
+  }
 }
 
 class Fiestas {
@@ -97,7 +100,7 @@ class Fiestas {
     this.fecha = pFecha;
     this.duracion = pDuracion;
     this.costo = pCosto;
-    this.animador = '';
+    this.animador = [];
   }
   registrarAnimador(pAnimador){
     this.animador=pAnimador;
@@ -118,3 +121,4 @@ class Animadores {
     this.costo = pCosto;
   }
 }
+

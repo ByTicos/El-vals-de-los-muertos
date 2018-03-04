@@ -34,4 +34,6 @@
       vm.listaMuertos = servicioUsuarios.obtenerMuerto();
     }
   }
+
+    
 })(); 

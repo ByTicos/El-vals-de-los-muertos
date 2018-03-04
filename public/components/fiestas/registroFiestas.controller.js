@@ -10,9 +10,15 @@
     let vm = this;
   }
 
-  if(!$stateParams.objVehiculoTemp){
+  if(!$stateParams.objMuertoTemp){
     $state.go('vehiculos');
   }
+
+  let objSinFormatoMuerto = JSON.parse($stateParams.objMuertoTemp);
+
+  let objMuerto = new Muerto (objSinFormatoMuerto.apodo, objSinFormatoMuerto.edad, objSinFormatoMuerto.genero);
+
+
 
 
 

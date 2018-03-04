@@ -58,6 +58,7 @@
 
       return listaUsuarios;
     }
+    
     function _agregarMuerto (pnuevoMuerto) {
   let listaMuertos = _obtenerMuerto ();
   //let respuesta = true;
@@ -103,6 +104,8 @@ function _getAllMuertos(){
   }
   return listaMuertos;
 }
+
+new Muerto ('Camaleon', '30', 'Masculino', '170');
 
   }
 })();
