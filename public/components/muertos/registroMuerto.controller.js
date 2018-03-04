@@ -30,6 +30,11 @@
      vm.nuevoMuerto = null;
     
     }
+      vm.agregarRetoqueaMuerto = (pMuerto) => {
+      console.log(pMuerto);
+
+      $state.go('registroRetoques', {objMuertoTemp: JSON.stringify(pMuerto)})
+    }
      function listarMuertos() {
       vm.listaMuertos = servicioUsuarios.getMuerto();
     }
