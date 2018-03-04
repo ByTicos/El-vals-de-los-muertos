@@ -14,7 +14,7 @@
       console.log(pRetoque);
       
 
-      let objNuevoRetoque = new Retoques(pRetoque);
+      let objNuevosRetoque = new Retoques(pRetoque);
 
      console.log('objeto con nuevo retoque');
      console.log(objNuevoRetoque);
