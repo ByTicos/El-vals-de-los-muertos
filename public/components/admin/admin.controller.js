@@ -4,14 +4,14 @@
   .module('funeraria')
   .controller('controladorAdministrador', controladorAdministrador);
 
-  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques','servicioAnimadores']
+  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques']
 
   function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques,servicioAnimadores){
     let vm = this;
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
 
-    //vm.listaMuertos = servicioUsuarios.getAllMuertos();
+    vm.listaMuertos = servicioUsuarios.getAllMuertos();
 
     vm.nuevoRetoque = {};
     vm.listaRetoques = listarRetoques();
@@ -41,7 +41,6 @@
     function listarRetoques() {
       vm.listaRetoques = servicioRetoques.obtenerRetoques();
     }
-
     
     //Registro de Animadores
 

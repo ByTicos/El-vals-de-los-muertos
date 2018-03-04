@@ -30,36 +30,11 @@
      vm.nuevoMuerto = null;
     
     }
-    
-     
-    
+      vm.agregarRetoqueaMuerto = (pMuerto) => {
+      console.log(pMuerto);
 
-    vm.editarMuertos=(pApodoMuerto,pEdadMuerto,pGeneroMuerto,pTamannoMuerto)=>{
-      document.querySelector('#apodo').value=pApodoMuerto;
-      document.querySelector ('#edad').value = pEdadMuerto;
-      document.querySelector('#genero').value=pGeneroMuerto;
-      document.querySelector('#tamanno').value=pTamannoMuerto;
-      document.querySelector('#btnRegistrar').classList.add('ocultar');
+      $state.go('registroRetoques', {objMuertoTemp: JSON.stringify(pMuerto)})
     }
-
-    function actualizar(){
-      document.querySelector ('#btnRegistrar').classList.remove ('ocultar');
-      document.querySelector ('#btnActualizar').classList.add ('ocultar');
-      
-      let sApodo = document.querySelector('#apodo').value;
-      let sEdad = document.querySelector ('#edad').value; 
-      let sGenero = document.querySelector('#genero').value;
-      let sTamanno = document.querySelector('#tamanno').value;
-      let listaMuertosModificada=[];
-      
-
-      listaMuertosModificada.push(sApodo,sEdad,sGenero,sTamanno);
-      actualizarMuerto(listaMuertosModificada);
-
-      listarMuertos();
-    }
-  
-
      function listarMuertos() {
       vm.listaMuertos = servicioUsuarios.getMuerto();
     }
