@@ -11,7 +11,11 @@
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
 
+<<<<<<< HEAD
     vm.listaMuertos = servicioUsuarios.getAllMuertos();
+=======
+    //vm.listaMuertos = servicioUsuarios.getAllMuertos();
+>>>>>>> Esteban
 
     vm.nuevoRetoque = {};
     vm.listaRetoques = listarRetoques();
