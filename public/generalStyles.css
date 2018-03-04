@@ -424,13 +424,9 @@ canvas {
   background-color:transparent;
 }
 
-<<<<<<< HEAD
-
-=======
 #eyes {
   position: absolute;
 }
->>>>>>> origin/Esteban
 
 
 .colorfooter1{
@@ -452,52 +448,6 @@ canvas {
   background-image: url(../../sources/img/entierros.png);
   width: 83%;
   height: 97%;
-<<<<<<< HEAD
-}
-
-.retoques{
-  background-image: url(../../sources/img/retoques.png);
-  width: 83%;
-  height: 79%;
-  margin-top: 10%;
-}
-
-.infierno{
-  background-image: url(../../sources/img/infierno.png);
-  width: 83%;
-  height: 79%;
-  margin-top: 10%;
-}
-
-.description{
-  color: white;
-  margin-top: 10%;
-
-}
-
-.testi{
-  font-size: 2rem;
-  text-align: center;
-  color: #2b0f04;
-  text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
-  font-family: 'Berkshire Swash', cursive;
-
-}
-
-
-.Servi{
-  font-size: 4rem;
-  text-align: center;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);  margin-left: -8%;
-  font-family: 'Berkshire Swash', cursive;
-}
-
-p{
-  font-family: 'Berkshire Swash', cursive;
-color: black;
-text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
-=======
 }
 
 .retoques{
@@ -544,4 +494,3 @@ color: black;
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);
 
 }
->>>>>>> origin/Esteban
