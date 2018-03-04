@@ -9,8 +9,6 @@
   function controladorRegistroRetoques($stateParams, $state, servicioUsuarios, servicioRetoques){
     let vm = this;
     vm.listaRetoques = servicioRetoques.obtenerRetoques();
-<<<<<<< HEAD
-=======
 
     vm.agregarRetoqueaMuerto = (pRetoque) =>{
       console.log(pRetoque);
@@ -21,9 +19,8 @@
 
      console.log('objeto con nuevo retoque');
      console.log(objNuevoRetoque);
->>>>>>> origin/Aaron
   }
 
-
+  }
   
 })();

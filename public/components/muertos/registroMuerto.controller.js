@@ -42,22 +42,7 @@
       document.querySelector('#btnRegistrar').classList.add('ocultar');
     }
 
-    function actualizar(){
-      document.querySelector ('#btnRegistrar').classList.remove ('ocultar');
-      document.querySelector ('#btnActualizar').classList.add ('ocultar');
-      
-      let sApodo = document.querySelector('#apodo').value;
-      let sEdad = document.querySelector ('#edad').value; 
-      let sGenero = document.querySelector('#genero').value;
-      let sTamanno = document.querySelector('#tamanno').value;
-      let listaMuertosModificada=[];
-      
-
-      listaMuertosModificada.push(sApodo,sEdad,sGenero,sTamanno);
-      actualizarMuerto(listaMuertosModificada);
-
-      listarMuertos();
-    }
+    
   
 
      function listarMuertos() {
