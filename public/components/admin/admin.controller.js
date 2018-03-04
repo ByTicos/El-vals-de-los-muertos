@@ -11,7 +11,7 @@
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
 
-    //vm.listaMuertos = servicioUsuarios.getAllMuertos();
+    vm.listaMuertos = servicioUsuarios.getAllMuertos();
 
     vm.nuevoRetoque = {};
     vm.listaRetoques = listarRetoques();
