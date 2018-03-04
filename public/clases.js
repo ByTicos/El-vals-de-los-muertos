@@ -63,12 +63,6 @@ class Muerto{
   obtenerApodo(){
     return this.apodo;
   }
-<<<<<<< HEAD
-=======
-  obtenerApodo(){
-    return this.apodo;
-  }
->>>>>>> Esteban
  
 }
 
