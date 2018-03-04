@@ -64,9 +64,17 @@
 
       return listaUsuarios;
     }
+<<<<<<< HEAD
      function _addMuerto (pnuevoMuerto) {
       let listaUsuarios = _getUsuarios();
       let sesion = JSON.parse(sessionStorage.getItem('sesion'));
+=======
+    
+    function _agregarMuerto (pnuevoMuerto) {
+  let listaMuertos = _obtenerMuerto ();
+  //let respuesta = true;
+  listaMuertos.push (pnuevoMuerto);
+>>>>>>> Esteban
 
       for(let i = 0; i < listaUsuarios.length; i++){
         if (sesion.cedula == listaUsuarios[i].obtenerCedula()){
@@ -111,6 +119,7 @@ function _getAllMuertos(){
   return listaMuertos;
 }
 
+<<<<<<< HEAD
 
 function actualizarMuerto(plistaMuertosModificada) {
   let listaUsuarios = _getUsuarios();
@@ -134,6 +143,9 @@ function actualizarMuerto(plistaMuertosModificada) {
  function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
+=======
+new Muerto ('Camaleon', '30', 'Masculino', '170');
+>>>>>>> Esteban
 
   }
 })();
