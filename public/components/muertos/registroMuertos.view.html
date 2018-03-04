@@ -3,35 +3,35 @@
 <section class="container mt-5 pt-5">
   <div class="pt-5">
     <form class="form-horizontal row" ng-submit="vm.agregarnuevoMuerto(vm.nuevoMuerto)">
-<div class="col-md-6">
-<div class="form-group">
-  <label for="">Apodo</label>
-  <input class="form-control" type="text" ng-model="vm.nuevoMuerto.apodo" required>
-</div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Apodo</label>
+          <input class="form-control" type="text" ng-model="vm.nuevoMuerto.apodo" required>
+        </div>
 
-<div class="form-group">
-  <label for="">Edad</label>
-  <input class="form-control" type="number" ng-model="vm.nuevoMuerto.edad" min="0" required >
-</div>
+        <div class="form-group">
+          <label for="">Edad</label>
+          <input class="form-control" type="number" ng-model="vm.nuevoMuerto.edad" min="0" required>
+        </div>
 
-<div class="form-group">
-        <label for="">Genero</label>
-        <select class="form-control" ng-model="vm.nuevoMuerto.genero" required >
+        <div class="form-group">
+          <label for="">Genero</label>
+          <select class="form-control" ng-model="vm.nuevoMuerto.genero" required>
             <option value="Masculino" selected>Masculino</option>
             <option value="Femenino">Femenino</option>
             <option value="Indefinido">Indefinido</option>
-        </select>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="">Tamaño</label>
+          <input class="form-control" type="number" ng-model="vm.nuevoMuerto.tamanno" min="0" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Registrar</button>
       </div>
 
 
-<div class="form-group">
-  <label for="">Tamaño</label>
-  <input class="form-control" type="number" ng-model="vm.nuevoMuerto.tamanno" min="0" required>
-</div>
-<button class="btn btn-primary" type="submit">Registrar</button>
-</div>
-      
-      
 
     </form>
   </div>
@@ -44,8 +44,8 @@
           <th>Genero</th>
           <th>Tamaño</th>
           <th>Entierro</th>
-          
-          
+          <th>Retoques</th>
+          <th>Fiestas</th>
         </tr>
       </thead>
       <tbody>
@@ -56,9 +56,16 @@
           <td>{{muerto.tamanno}}</td>
           <td>
             <button type="button">Entierros</button>
-            <button type="button">Retoques</button>
           </td>
-         
+            
+          <td>
+              <button type="button">Retoques</button>
+          </td>
+          <td>
+              <button type="button">Fiestas</button>
+          </td>
+
+
         </tr>
       </tbody>
     </table>
