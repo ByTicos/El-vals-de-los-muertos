@@ -10,6 +10,11 @@
     let vm = this;
   }
 
+  if(!$stateParams.objVehiculoTemp){
+    $state.go('vehiculos');
+  }
+
+
 
 
 
