@@ -29,14 +29,6 @@
   margin-bottom: 70px;
 }
 
-<<<<<<< HEAD
-=======
-#bgimage img{
-  max-width: 100%;
-  width: 100%;
-}
-
->>>>>>> origin/Esteban
 /* Sobre nosotros Section
 --------------------------------*/
 #about {
@@ -50,19 +42,7 @@
 #about .about-img img {
   margin-left: 30%;
   max-width: 100%;
-<<<<<<< HEAD
   width: 60%;
-=======
-  width: 70%;
-}
-
-.padding {
-  padding-top: 45px;
-}
-
-.padding2 {
-padding-bottom: 30px;
->>>>>>> origin/Esteban
 }
 
 @media (max-width: 768px) {
@@ -124,13 +104,8 @@ padding-bottom: 30px;
 #services {
   padding: 30px 0 0 0;
   background-image: url(../../sources/img/Seccionvals.jpg);
-<<<<<<< HEAD
   width: 1300px;
   height: 800px;
-=======
-  width: 100%;
-
->>>>>>> origin/Esteban
 
 }
 
@@ -445,13 +420,7 @@ canvas {
 	background-color:transparent;
 }
 
-.bg {
-	no-repeat center center relative; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 .colorfooter1{
   color: #ddd;
@@ -462,7 +431,6 @@ canvas {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .muertos{
   background-image: url(../../sources/img/muertos.png);
   width: 83%;
@@ -517,10 +485,3 @@ p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
-=======
-#eyes {
-  position: absolute;
-}
-
-/***** estilos generales */
->>>>>>> origin/Esteban
