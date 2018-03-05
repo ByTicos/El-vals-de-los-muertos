@@ -24,8 +24,12 @@
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos,
+<<<<<<< HEAD
       addFiesta: _addFiesta,
       getFiesta: _getFiesta
+=======
+      eliminarUsuario: _eliminarUsuario
+>>>>>>> Stable
     }
     return publicAPI;
 
@@ -53,6 +57,9 @@
         listaUsuariosLocal.forEach(obj => {
 
           let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
+
+          objUsuarios.cambiarEstado(obj.estado);
+          
 
           obj.listaMuertos.forEach(objMuertos =>{
             let objMuertoTemporal = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
@@ -95,6 +102,17 @@ function _getMuerto () {
       }
       return listaMuertos;
 }
+function _eliminarUsuario(pCedula){
+    let listaUsuarios = _getUsuarios();
+    for (let i = 0; i < listaUsuarios.length; i++){
+      if (listaUsuarios[i].cedula == pCedula) {
+        listaUsuarios[i].cambiarEstado('inactivo');
+        console.log(listaUsuarios[i].estado);
+        console.log(listaUsuarios);
+      }  
+    }
+    localStorage.setItem('usuariosLS', JSON.stringify(listaUsuarios));
+  }
 
 function _getAllMuertos(){
   let listaUsuarios = _getUsuarios();
