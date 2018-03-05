@@ -23,7 +23,8 @@
       getUsuarios : _getUsuarios,
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
-      getAllMuertos: _getAllMuertos
+      getAllMuertos: _getAllMuertos,
+      eliminarUsuario: _eliminarUsuario
     }
     return publicAPI;
 
@@ -93,6 +94,17 @@ function _getMuerto () {
       }
       return listaMuertos;
 }
+function _eliminarUsuario(pCedula){
+    let listaUsuarios = _getUsuarios();
+    for (let i = 0; i < listaUsuarios.length; i++){
+      if (listaUsuarios[i].cedula == pCedula) {
+        listaUsuarios[i].cambiarEstado('inactivo');
+        console.log(listaUsuarios[i].estado);
+        console.log(listaUsuarios);
+      }  
+    }
+    localStorage.setItem('usuariosLS', JSON.stringify(listaUsuarios));
+  }
 
 function _getAllMuertos(){
   let listaUsuarios = _getUsuarios();

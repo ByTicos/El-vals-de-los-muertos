@@ -18,6 +18,11 @@
 
     listarRetoques();
 
+    vm.eliminarUsuario = (pCedula) => {
+      console.log(pCedula);
+      servicioUsuarios.eliminarUsuario(pCedula);
+    }
+    
     vm.agregarNuevoRetoque = (pnuevoRetoque) => {
       console.log(pnuevoRetoque);
 
