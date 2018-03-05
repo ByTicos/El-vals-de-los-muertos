@@ -62,6 +62,15 @@ class Muerto{
   obtenerContrasenna(){
     return this.contrasenna;
   }
+
+  obtenerFiesta(){
+    return this.fiesta;
+  }
+
+  obtenerInfoMuerto(){
+    return this.apodo;
+  }
+  
 }
 
 class Entierro {
@@ -89,10 +98,9 @@ class Retoques {
 }
 
 class Fiestas {
-  constructor (pFecha, pDuracion, pAnimador, pCosto) {
+  constructor (pFecha, pDuracion, pCosto) {
     this.fecha = pFecha;
     this.duracion = pDuracion;
-    this.animador = pAnimador;
     this.costo = pCosto;
     this.animador = [];
   }
@@ -100,7 +108,6 @@ class Fiestas {
     this.animador=pAnimador;
   }
 }
-
 
 
 class Lugares {

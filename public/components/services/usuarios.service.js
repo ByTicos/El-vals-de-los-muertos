@@ -23,7 +23,9 @@
       getUsuarios : _getUsuarios,
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
-      getAllMuertos: _getAllMuertos
+      getAllMuertos: _getAllMuertos,
+      addFiesta: _addFiesta,
+      getFiesta: _getFiesta
     }
     return publicAPI;
 
@@ -112,5 +114,50 @@ function _getAllMuertos(){
  function actualizarLocal(plistaActualizada) {
      localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
    }
+
+
+
+  function _addFiesta(pMuerto, pFiesta){
+    let listaUsuarios = _getUsuarios();
+    let listaVehiculos = [];
+
+    // Ciclo que recorre todos los usuarios
+    for(let i = 0; i < listaUsuarios.length; i++){
+      
+      // Ciclo que recorre todos los vehiculos por usuario
+      for(let j=0 ;j < listaUsuarios[i].obtenerMuertos().length; j++){
+
+        // Si la matricula del vehiculo coincide
+        if(listaUsuarios[i].obtenerMuertos()[j].obtenerInfoMuerto() == pMuerto.obtenerInfoMuerto()){
+
+          // Le registra la reparación
+          listaUsuarios[i].obtenerMuertos()[j].registrarFiesta(pFiesta);
+        }
+      }
+    }
+    actualizarLocal(listaUsuarios);
+  }
+
+  // Funcion que obtiene todas las reparaciones de los vehiculos
+  function _getFiesta(objMuerto){
+    let listaUsuarios = _getUsuarios();
+    let fiestaMuertos = [];
+
+    for(let i = 0; i < listaUsuarios.length; i++){
+      for(let j=0 ;j < listaUsuarios[i].obtenerMuertos().length; j++){
+
+        if (objMuerto.obtenerInfoMuerto() == listaUsuarios[i].obtenerMuertos()[j].obtenerInfoMuerto()){
+          fiestaMuertos = listaUsuarios[i].obtenerMuertos()[j].getFiesta();
+        }
+      }
+    }
+    return fiestaMuertos;
+  }
+
+  function actualizarLocal(plistaActualizada){
+    localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));
+  }
+
+
   }
 })();
