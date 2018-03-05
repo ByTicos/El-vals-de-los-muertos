@@ -47,6 +47,7 @@
     function listarRetoques() {
       vm.listaRetoques = servicioRetoques.obtenerRetoques();
     }
+
     
     //Registro de Animadores
 /*
