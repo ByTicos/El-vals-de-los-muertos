@@ -8,7 +8,7 @@ class Cliente{
     this.cedula = pCedula;
     this.provincia = pProvincia;
     this.canton = pCanton;
-    this.disttrito = pDistrito;
+    this.distrito = pDistrito;
     this.ubicacion = pUbicacion;
     this.fechaNacimiento = pFechaNacimiento;
     this.edad = pEdad;
@@ -17,6 +17,10 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
     this.estado = 'activo';
+  }
+
+  getEstado(){
+    return this.estado;
   }
   cambiarEstado(pEstado){
     this.estado = pEstado;
