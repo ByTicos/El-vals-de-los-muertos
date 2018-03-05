@@ -17,7 +17,9 @@ class Cliente{
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
   }
-
+  cambiarEstado(pEstado){
+    this.estado = pEstado;
+  }
   obtenerMuertos(){
     return this.listaMuertos;
   }
