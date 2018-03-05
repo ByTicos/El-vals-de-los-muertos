@@ -24,12 +24,8 @@
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos,
-<<<<<<< HEAD
       addFiesta: _addFiesta,
       getFiesta: _getFiesta
-=======
-      eliminarUsuario: _eliminarUsuario
->>>>>>> Stable
     }
     return publicAPI;
 

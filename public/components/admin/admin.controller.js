@@ -4,9 +4,9 @@
   .module('funeraria')
   .controller('controladorAdministrador', controladorAdministrador);
 
-  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques', 'servicioAnimadores']
+  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques']
 
-  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques,servicioAnimadores){
+  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques){
     let vm = this;
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
