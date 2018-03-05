@@ -24,8 +24,8 @@
       addMuerto : _addMuerto,
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos,
-<<<<<<< HEAD
       addFiesta: _addFiesta,
+<<<<<<< HEAD
       getFiesta: _getFiesta
 =======
 <<<<<<< HEAD
@@ -35,6 +35,10 @@
       eliminarUsuario: _eliminarUsuario
 >>>>>>> Stable
 >>>>>>> Esteban
+=======
+      getFiesta: _getFiesta,
+      eliminarUsuario: _eliminarUsuario
+>>>>>>> master
     }
     return publicAPI;
 
