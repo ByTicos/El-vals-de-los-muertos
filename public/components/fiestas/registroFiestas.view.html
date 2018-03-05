@@ -10,12 +10,12 @@
         </div>
 
         <div class="form-group">
-          <label for="">Duracion en horas</label>
+          <label for="">Apodo</label>
           <input class="form-control" type="number" ng-model="vm.nuevaFiesta.duracion" min="0" required >
         </div>
 
         <div class="form-group">
-          <label for="">Animador</label>
+          <label for="">Costo</label>
           <select name="dropdown" id="dropdown" ng-model="vm.nuevaFiesta.animador">
               <option value="">Seleccione su Animador</option>
               <option ng-repeat="animador in vm.listaAnimador" value="">{{animador.apodo}}</option>
@@ -35,10 +35,8 @@
       <thead>
         <tr>
           <th>Fecha</th>
-          <th>Duracion en Horas</th>
-          <th>Animador</th>
-          <th>Costo</th>  <!-- Falta calcular el costo total -->
-          
+          <th>Apodo</th>
+          <th>Costo</th>
           
           
         </tr>

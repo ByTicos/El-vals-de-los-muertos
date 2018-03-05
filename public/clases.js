@@ -94,7 +94,7 @@ class Fiestas {
     this.duracion = pDuracion;
     this.animador = pAnimador;
     this.costo = pCosto;
-    this.animador = '';
+    this.animador = [];
   }
   registrarAnimador(pAnimador){
     this.animador=pAnimador;
@@ -111,10 +111,9 @@ class Lugares {
 }
 
 class Animadores {
-  constructor (pId, pNombre,pApellido, pCosto) {
+  constructor (pId, pApodo, pCosto) {
     this.id = pId;
-    this.nombre = pNombre;
-    this.apellido = pApellido;
+    this.nombre = pApodo;
     this.costo = pCosto;
   }
 }

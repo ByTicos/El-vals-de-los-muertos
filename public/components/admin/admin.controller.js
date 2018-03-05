@@ -76,6 +76,41 @@
     function listaAnimador() {
       vm.listaAnimador = servicioAnimadores.obtenerAnimador();
     }
+    
 
+    //Registro de Animadores
+
+    vm.nuevoAnimador = {};
+    vm.listaAnimador = listarAnimador();
+
+    listarAnimador();
+    // Función que es llamda desde el html para registra un nuevo usuario
+    vm.registrarAnimador = (pnuevoAnimador) => {
+
+      console.log(pnuevoAnimador);
+
+      // Tomamos el objeto sin formato y lo comvertimos en una instancia de la clase cliente
+      let objNuevoAnimador = new Animadores(pnuevoAnimador.id, pnuevoAnimador.apodo, pnuevoAnimador.costo);
+
+     
+      console.log('objeto con usuario');
+      console.log(objNuevoAnimador);
+
+      // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
+      servicioAnimadores.agregarAnimador(objNuevoAnimador);
+
+      // Retroalimentación Visual para los usuarios
+      swal("Registro exitoso", "El Animador ha sido registrado correctamente", "success", {
+        button: "Aceptar",
+      });
+
+      // Se limpia el formulario
+      vm.nuevoAnimador = null;
+      listarAnimador();
+    }
+
+    function listaAnimador() {
+      vm.listaAnimador = servicioAnimadores.obtenerAnimador();
+    }
   }
 })();
