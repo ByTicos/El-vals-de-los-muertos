@@ -25,7 +25,6 @@
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos,
       addFiesta: _addFiesta,
-      getFiesta: _getFiesta,
       eliminarUsuario: _eliminarUsuario
     }
     return publicAPI;
@@ -61,7 +60,16 @@
           obj.listaMuertos.forEach(objMuertos =>{
             let objMuertoTemporal = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
 
+            objMuertoTemporal.fiesta.forEach(objFiesta =>{
+
+              let objFiestaTemporal = new Fiestas (objFiesta.fecha, objFiesta.duracion, objFiesta.costo);
+
+              objMuertoTemporal.registrarFiesta(objFiestaTemporal);
+            })
+
             objUsuarios.registrarMuerto(objMuertoTemporal);
+
+
 
           
 
@@ -135,39 +143,31 @@ function _getAllMuertos(){
   function _addFiesta(pMuerto, pFiesta){
     let listaUsuarios = _getUsuarios();
     let listaVehiculos = [];
-
-    // Ciclo que recorre todos los usuarios
+    let fiesta = {};
+    
     for(let i = 0; i < listaUsuarios.length; i++){
       
-      // Ciclo que recorre todos los vehiculos por usuario
+      
       for(let j=0 ;j < listaUsuarios[i].obtenerMuertos().length; j++){
+       
+        
+        if(JSON.stringify(listaUsuarios[i].obtenerMuertos()[j].obtenerInfoMuerto()) == JSON.stringify(pMuerto.obtenerInfoMuerto())){
 
-        // Si la matricula del vehiculo coincide
-        if(listaUsuarios[i].obtenerMuertos()[j].obtenerInfoMuerto() == pMuerto.obtenerInfoMuerto()){
-
-          // Le registra la reparación
+         
           listaUsuarios[i].obtenerMuertos()[j].registrarFiesta(pFiesta);
+          fiesta = listaUsuarios[i].obtenerMuertos()[j];
+          console.log('Registro fiesta completo', listaUsuarios[i].obtenerMuertos()[j]);
         }
       }
     }
+    console.log(listaUsuarios);
     actualizarLocal(listaUsuarios);
+    console.log(listaUsuarios);
+    return fiesta;
   }
 
-  // Funcion que obtiene todas las reparaciones de los vehiculos
-  function _getFiesta(objMuerto){
-    let listaUsuarios = _getUsuarios();
-    let fiestaMuertos = [];
+  
 
-    for(let i = 0; i < listaUsuarios.length; i++){
-      for(let j=0 ;j < listaUsuarios[i].obtenerMuertos().length; j++){
-
-        if (objMuerto.obtenerInfoMuerto() == listaUsuarios[i].obtenerMuertos()[j].obtenerInfoMuerto()){
-          fiestaMuertos = listaUsuarios[i].obtenerMuertos()[j].getFiesta();
-        }
-      }
-    }
-    return fiestaMuertos;
-  }
 
   function actualizarLocal(plistaActualizada){
     localStorage.setItem('usuariosLS', JSON.stringify(plistaActualizada));

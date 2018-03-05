@@ -1,9 +1,10 @@
 <div ng-include = "'./components/includes/_header.html'"></div>
 <div class="container-fluid">
+<div class="container-fluid">
     <h1>Admin</h1>
-  <div class="pt-5">
+  <div class="pt-5 container-fluid">
     <legend>Usuarios</legend>
-    <button type="button" ng-click="mostrar()">Usuarios desactivados</button>
+    <button type="button" ng-click="mostrar()" class="btn buttonall">Usuarios desactivados</button>
     <table class="table table-hover">
       <thead>
           <tr>
@@ -35,12 +36,12 @@
           <td>{{usuario.edad}}</td>
           <td>{{usuario.genero}}</td>
           <td>{{usuario.nombreUsuario}}</td>
-          <td><button class="btn btn-primary"  type="button" ng-click="vm.eliminarUsuario(usuario.cedula)">Eliminar</button></td>
+          <td><button class="btn buttonall"  type="button" ng-click="vm.eliminarUsuario(usuario.cedula)">Eliminar</button></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="pt-5">
+  <div class="pt-5 container-fluid">
       <legend>Muertos</legend>
     <table class="table table table-hover">
       <thead>
@@ -62,16 +63,16 @@
           <td>{{muerto.genero}}</td>
           <td>{{muerto.tamanno}}</td>
           <td>
-            <button class="btn btn-primary" type="button">Entierros</button>
+            <button class="btn buttonall" type="button">Entierros</button>
           </td>
           <td>
-            <button class="btn btn-primary" type="button">Retoques</button>
+            <button class="btn buttonall" type="button">Retoques</button>
           </td>
           <td>
-            <button class="btn btn-primary" type="button">Fiesta</button>
+            <button class="btn buttonall" type="button">Fiesta</button>
           </td>
           <td>
-            <button class="btn btn-primary" type="button">Desactivar</button>
+            <button class="btn buttonall" type="button">Desactivar</button>
           </td>
         </tr>
       </tbody>
@@ -80,7 +81,7 @@
 </div>
 
 <section>
-  <div class="pt-5">
+  <div class="pt-5 container-fluid">
     <legend>Registre Nuevos Retoques</legend>
    <form  ng-submit="vm.agregarNuevoRetoque(vm.nuevoRetoque)">
 
@@ -100,12 +101,12 @@
        </div>
 
 
-     <button type="submit" name="button">Registrar Retoque</button>
+     <button type="submit" name="button" class="btn buttonall">Registrar Retoque</button>
    </form>
  </div>
 
  <div class="pt-5">
-   <table class="table">
+   <table class="table table table-hover">
      <thead>
        <tr>
          <th>Id</th>
@@ -127,7 +128,7 @@
 
 
 
-    <section>
+    <section id="animadores" class="container-fluid">
       <div class="">
         <h2>Crear Animadores</h2>
 
@@ -147,8 +148,8 @@
               <input type="Number" class="form-control" ng-model="vm.nuevoAnimador.costo">
             </div>
     
-       <div class="container">
-            <button class="btn btn-primary" type="submit">Registrar Animador</button>
+       <div class="">
+            <button class="btn buttonall" type="submit">Registrar Animador</button>
         </div>
       </form>
     
@@ -171,4 +172,5 @@
             </tbody>
           </table>
       </div>
+    </div>
     </section>

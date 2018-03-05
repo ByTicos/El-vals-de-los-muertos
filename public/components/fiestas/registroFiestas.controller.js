@@ -2,7 +2,6 @@
   'use strict';
   angular
   .module('funeraria')
-<<<<<<< HEAD
   .controller('controladorRegistroFiestas', controladorRegistroFiestas);
 
   controladorRegistroFiestas.$inject = ['$stateParams', '$state', 'servicioUsuarios']
@@ -14,74 +13,51 @@
     if(!$stateParams.objMuertoTemp){
       $state.go('muertos');
     }
+    console.log($stateParams);
+    let objSinFormatoMuerto = $stateParams.objMuertoTemp;
 
-    let objSinFormatoMuerto = JSON.parse($stateParams.objMuertoTemp);
+    let objMuerto = new Muerto (objSinFormatoMuerto.apodo, objSinFormatoMuerto.edad, objSinFormatoMuerto.genero, objSinFormatoMuerto.tamanno, objSinFormatoMuerto.fiesta);
 
-    let objMuerto = new Muerto (objSinFormatoMuerto.apodo, objSinFormatoMuerto.edad, objSinFormatoMuerto.genero, objSinFormatoMuerto.tamanno);
+    console.log('objetosinformato',objSinFormatoMuerto);
 
-    vm.infoMuerto = objMuerto.getInfoMuerto();
+    //vm.infoMuerto = objMuerto.getInfoMuerto();
 
-    listaFiestas();
+     listaFiestas(objMuerto);
 
-    vm.nuevaFiesta = {};
+    //vm.nuevaFiesta = {};
+    
 
-    vm.listarFiestas = servicioUsuarios.obtenerFiesta(objMuerto);
+    // vm.listarFiestas = Animadores.obtenerFiesta(objMuerto);
 
     vm.registrarFiesta = (nuevaFiesta) => {
 
       let objFiesta = new Fiestas(nuevaFiesta.fecha, nuevaFiesta.duracion, nuevaFiesta.costo)
 
-      servicioUsuarios.addFiesta(objMuerto, objFiesta);
+      objMuerto =  servicioUsuarios.addFiesta(objMuerto, objFiesta);
+     
+      console.log(localStorage);
 
-      listaFiestas();
+      //objMuerto = objMuerto.obtenerInfoMuerto();
+
+      listaFiestas(objMuerto);
 
       swal("Registro exitoso", "Se ha registrado correctamente la Fiesta", "success", {
         button: "Aceptar",
       });
 
-      vm.nuevaFiesta = null;
+      //vm.nuevaFiesta = null;
     }
 
     vm.volver = () => {
       $state.go('muertos');
     }
 
-    function listaFiestas(){
-      vm.listaFiestas = servicioUsuarios.obtenerFiesta(objMuerto);
+     function listaFiestas(objMuerto){
+       console.log(objMuerto);
+     vm.listaFiestas = objMuerto.obtenerFiesta();
+     console.log(vm.listaFiestas)
     }
+
+    
   }
 })();
-=======
-  .controller('controladorFiestas', controladorFiestas);
-
-  controladorFiestas.$inject = ['$stateParams', '$state', 'servicioUsuarios'];
-
-  function controladorFiestas($stateParams, $state, servicioUsuarios){
-    let vm = this;
-  }
-
-  if(!$stateParams.objMuertoTemp){
-    $state.go('vehiculos');
-  }
-
-  let objSinFormatoMuerto = JSON.parse($stateParams.objMuertoTemp);
-
-  let objMuerto = new Muerto (objSinFormatoMuerto.apodo, objSinFormatoMuerto.edad, objSinFormatoMuerto.genero);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})(); 
->>>>>>> Stable
