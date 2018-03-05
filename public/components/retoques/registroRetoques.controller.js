@@ -19,8 +19,14 @@
 
      console.log('objeto con nuevo retoque');
      console.log(objNuevosRetoques);
+
+  }
+
+  vm.volver = () => {
+    $state.go('registrarMuertos');
   }
 
 }
+
   
 })();
