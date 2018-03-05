@@ -17,24 +17,29 @@
     listarEntierro();
 
     
-    vm.registrarMuerto = (pnuevoMuerto) =>{
+    vm.nuevoEntierro = {};
+
+    listaEntierro();
+
+    
+    vm.registrarEntierro = (pnuevoEntierro) =>{
      
 
-     let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
+     let objNuevoEntierro = new Entierro (pnuevoEntierro.fecha, pnuevoEntierro.horaInicio, pnuevoEntierro.horaFin, ppnuevoEntierro.prioridad);
 
-     servicioUsuarios.addMuerto(objNuevoMuerto);
+     servicioUsuarios.addEntierro(objNuevoEntierro);
 
 
      swal("Registro exitoso", "Se ha registrado correctamente el difunto", "success", {
         button: "Aceptar",
       });
-     listarMuertos ();
+     listarEntierro ();
 
-     vm.nuevoMuerto = null;
+     vm.nuevoEntierro = null;
     
     }
-    function listarMuertos(){
-    vm.listaMuertos = servicioUsuarios.getMuerto();
+    function listaEntierro(){
+    vm.listaEntierro = servicioUsuarios.getEntierro();
       
     }
      
