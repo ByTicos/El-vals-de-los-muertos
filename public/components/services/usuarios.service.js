@@ -53,6 +53,9 @@
 
           let objUsuarios = new Cliente(obj.foto, obj.nombre, obj.apellido, obj.cedula, obj.provincia, obj.canton, obj.distrito, obj.ubicacion, obj.fechaNacimiento, obj.edad, obj.genero, obj.nombreUsuario, obj.contrasenna);
 
+          objUsuarios.cambiarEstado(obj.estado);
+          
+
           obj.listaMuertos.forEach(objMuertos =>{
             let objMuertoTemporal = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
 
