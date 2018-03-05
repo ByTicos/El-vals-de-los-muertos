@@ -59,9 +59,9 @@
           
 
           obj.listaMuertos.forEach(objMuertos =>{
-            let objMuertoTemporal = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
+            let objMuertoTemp = new Muerto (objMuertos.apodo, objMuertos.edad, objMuertos.genero, objMuertos.tamanno );
 
-            objUsuarios.registrarMuerto(objMuertoTemporal);
+            objUsuarios.registrarMuerto(objMuertoTemp);
 
           
 
