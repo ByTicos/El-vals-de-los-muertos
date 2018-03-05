@@ -7,7 +7,7 @@
 
             <select name="dropdown" id="dropdown" ng-model="vm.nuevoRetoque">
                 <option value="">Seleccione su retoque</option>
-                <option ng-repeat="retoque in vm.listaRetoques" value="">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
+                <option ng-repeat="retoque in vm.listaRetoques" value="{{retoque}}">{{retoque.id}} {{retoque.nombre}} {{retoque.costo}}</option>
               </select>
 
            <button type="submit" name="button">Agregar Retoque</button>
