@@ -16,6 +16,7 @@ class Cliente{
     this.nombreUsuario = pNombreUsuario;
     this.contrasenna = pContrasenna;
     this.listaMuertos = [];
+    this.estado = 'activo';
   }
   cambiarEstado(pEstado){
     this.estado = pEstado;
