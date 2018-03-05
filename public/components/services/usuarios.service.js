@@ -25,7 +25,8 @@
       getMuerto : _getMuerto,
       getAllMuertos: _getAllMuertos,
       addFiesta: _addFiesta,
-      getFiesta: _getFiesta
+      getFiesta: _getFiesta,
+      eliminarUsuario: _eliminarUsuario
     }
     return publicAPI;
 
