@@ -47,7 +47,7 @@
     function listarRetoques() {
       vm.listaRetoques = servicioRetoques.obtenerRetoques();
     }
-    
+    /*
     //Registro de Animadores
 
     vm.nuevoAnimador = {};
@@ -82,6 +82,6 @@
     function listaAnimador() {
       vm.listaAnimador = servicioAnimadores.obtenerAnimador();
     }
-    
+    */
   }
 })();
