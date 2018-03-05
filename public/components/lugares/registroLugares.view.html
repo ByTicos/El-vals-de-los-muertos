@@ -10,7 +10,7 @@
 
       <div class="form-control">
         <label for="">Nombre</label>
-        <input type="text" ng-model="vm.nuevoLugar.nombre"  value="">
+        <input type="text" ng-model="vm.nuevoLugar.lugar"  value="">
       </div>
 
 
@@ -28,8 +28,8 @@
       </thead>
       <tbody>
         <tr ng-repeat="lugar in vm.listaLugares">
-          <td>{{Lugares.id}}</td>
-          <td>{{Lugares.nombre}}</td>
+          <td>{{lugar.id}}</td>
+          <td>{{lugar.lugar}}</td>
         </tr>
       </tbody>
     </table>

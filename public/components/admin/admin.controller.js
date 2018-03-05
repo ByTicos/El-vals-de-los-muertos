@@ -4,9 +4,9 @@
   .module('funeraria')
   .controller('controladorAdministrador', controladorAdministrador);
 
-  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques']
+  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques','servicioLugares']
 
-  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques){
+  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques,servicioLugares){
     let vm = this;
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
@@ -17,6 +17,15 @@
     vm.listaRetoques = listarRetoques();
 
     listarRetoques();
+
+
+
+
+   /*MIO----------------------------------------*/
+    vm.nuevoLugar = {};
+    vm.listaLugares = listarLugares();
+    listarLugares();
+    /*MIOOOOO------------------------------------------------*/
 
     vm.eliminarUsuario = (pCedula) => {
       console.log(pCedula);
@@ -83,5 +92,32 @@
       vm.listaAnimador = servicioAnimadores.obtenerAnimador();
     }
     */
+
+
+    /*------------------Registro Lugares-------------------------------*/
+
+   vm.agregarNuevoLugar = (pnuevoLugar) => {
+    console.log(pnuevoLugar);
+
+    let objNuevoLugar = new Lugares (pnuevoLugar.id, pnuevoLugar.lugar);
+
+    console.log('objeto con nuevo lugar');
+    console.log(objNuevoLugar);
+    servicioLugares.agregarLugares(objNuevoLugar);
+
+    swal("Registro Terrorífico!","El registro ha sido exitoso", "success",{ button:"aceptar",});
+
+    vm.nuevoLugar = null;
+    listarLugares();
+
+  }
+  
+  function  listarLugares(){
+  vm.listaLugares = servicioLugares.obtenerLugares()
+};
+
+/*------------------------------------Fin Lugares----------------------------------*/
+
+
   }
 })();

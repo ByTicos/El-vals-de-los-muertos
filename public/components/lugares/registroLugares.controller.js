@@ -2,32 +2,42 @@
   'use strict';
   angular
   .module('funeraria')
-  .controller('controladorRegistroLugares', controladorRegistroLugares);
+  .controller('controladorRegistroLugares', controladorRegistroLugares); 
 
-  controladorRegistroLugares.$inject = ['servicioLugares']
 
-  function controladorRegistroLugares(servicioLugares){
-    let vm = this;
+controladorRegistroLugares.$inject = ['$stateParams','$state','servicioLugares','servicioUsuarios']; 
 
-    vm.nuevoLugar = {};
+ function controladorRegistroLugares($stateParams,$state,servicioLugares, servicioUsuarios){ 
+ let vm = this; 
+      
+ vm.nuevoLugar = {}; 
+       
+      
+ vm.listaLugares = servicioLugares.obtenerLugares();      
+       
+   
+ vm.agregarNuevoLugar = (pnuevoLugar) => {     
+        
+ console.log(pnuevoLugar);      
+         
+ let objNuevoLugar = new Lugares(pnuevoLugar.id, pnuevoLugar.lugar);  
+ 
+console.log('objeto con nuevo lugar');    
     
-    vm.agregarNuevoLugar = (pnuevoLugar) => {
-      console.log(pnuevoLugar);
+ console.log(objNuevoLugar);     
+         
+ servicioLugares.agregarLugares(objNuevoLugar);    
+          
+      
+    swal("Excelente","Lugar registrado", "success",{ button:"aceptar",});    
+      
+  vm.nuevoLugar = null;        
+ }     
 
-      let objNuevoLugar = new Lugar (pnuevoLugar.id, pnuevoLugar.lugar);
+/*function listarLugares() {     
+ vm.listaLugares = servicioLugares.obtenerLugares();    }*/
 
-      console.log('objeto con nuevo lugar');
-     console.log(objNuevoLugar);
-     servicioEntierro.agregarLugar(objNuevoLugar);
-
-     swal("Excelente elección", "success",{ button:"aceptar",});
-
-     vm.nuevoLugar = null;
-    
-    listar;
-    }
-     function listaLugares() {
-      vm.listaLugares = servicioEntierro.obtenerLugar();
-    }
   }
 })(); 
+
+
