@@ -104,16 +104,19 @@
 #services {
   padding: 30px 0 0 0;
   background-image: url(../../sources/img/Seccionvals.jpg);
-  width: 1300px;
-  height: 800px;
+  width: 100%;
+
 
 }
 
 .imagenheader{
-  width: 1295px;
+  width: 100%;
 
 }
 
+.boxfix {
+  padding-bottom: 35px;
+}
 
 #services .caja {
   padding: 40px;
@@ -441,12 +444,14 @@ canvas {
   background-image: url(../../sources/img/muertos.png);
   width: 83%;
   height: 97%;
+  background-repeat: no-repeat;
 }
 
 .entierros{
   background-image: url(../../sources/img/entierros.png);
   width: 83%;
   height: 97%;
+  background-repeat: no-repeat;
 }
 
 .retoques{
@@ -454,6 +459,7 @@ canvas {
   width: 83%;
   height: 79%;
   margin-top: 10%;
+  background-repeat: no-repeat;
 }
 
 .infierno{
@@ -461,6 +467,7 @@ canvas {
   width: 83%;
   height: 79%;
   margin-top: 10%;
+  background-repeat: no-repeat;
 }
 
 .description{
@@ -491,3 +498,74 @@ p{
   font-family: 'Berkshire Swash', cursive;
 color: black;
 text-shadow: 2px 2px 4px rgba(107, 47, 0, 0.55);}
+
+
+.fiestas {
+  background-image: url(../../sources/img/bgfiestas.jpg);
+  width: 100%;
+  position: absolute;
+  background-position: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.effect6
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect6:before, .effect6:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect6:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+.buttonall {
+  position: relative;
+  height: 50px;
+  width: 180px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  background-color: #FF9100;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+
+.buttonall:hover {
+  background-color: #fff;
+  color: #FF9100;
+}
+
+.paddingfix {
+  padding: 20px;
+}
+
+.paddingfix2 {
+  margin-top: 60px;
+}

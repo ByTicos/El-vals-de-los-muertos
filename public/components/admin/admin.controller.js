@@ -4,9 +4,9 @@
   .module('funeraria')
   .controller('controladorAdministrador', controladorAdministrador);
 
-  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques']
+  controladorAdministrador.$inject = ['servicioUsuarios','servicioAdministrador','servicioRetoques', 'servicioAnimadores']
 
-  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques){
+  function controladorAdministrador(servicioUsuarios, servicioAdministrador, servicioRetoques, servicioAnimadores){
     let vm = this;
 
     vm.listaUsuarios = servicioUsuarios.getUsuarios();
@@ -47,11 +47,11 @@
     function listarRetoques() {
       vm.listaRetoques = servicioRetoques.obtenerRetoques();
     }
-    /*
+    
     //Registro de Animadores
 
     vm.nuevoAnimador = {};
-    vm.listaAnimador = listarAnimador();
+    //vm.listaAnimador = listaAnimador();
 
     listarAnimador();
     // Función que es llamda desde el html para registra un nuevo usuario
@@ -76,12 +76,12 @@
 
       // Se limpia el formulario
       vm.nuevoAnimador = null;
-      listarAnimador();
+     // listarAnimador();
     }
 
-    function listaAnimador() {
+    function listarAnimador() {
       vm.listaAnimador = servicioAnimadores.obtenerAnimador();
     }
-    */
+    
   }
 })();

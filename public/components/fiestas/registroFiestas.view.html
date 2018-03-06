@@ -1,44 +1,31 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 
-<section class="container mt-5 pt-5">
+<section class="container mt-5 pt-5" id="">
   <div class="pt-5">
-<<<<<<< HEAD
-    <form class="form-horizontal row" ng-submit="vm.registrarFiesta(vm.nuevaFiesta)">
-=======
-    <form class="form-horizontal row" ng-submit="vm.agregarnuevaFiesta(vm.nuevaFiesta)">
->>>>>>> Stable
+    <form class="form-horizontal row container" ng-submit="vm.registrarFiesta(vm.nuevaFiesta)">
       <div class="col-md-6">
         <div class="form-group">
           <label for="">Fecha</label>
-          <input class="form-control" type="date" ng-model="vm.nuevaFiesta.fecha" required>
+          <input class="form-control effect6" type="date" ng-model="vm.nuevaFiesta.fecha" required>
         </div>
 
         <div class="form-group">
-<<<<<<< HEAD
           <label for="">Duracion</label>
-          <input class="form-control" type="text" ng-model="vm.nuevaFiesta.duracion" required >
+          <input class="form-control effect6" type="text" ng-model="vm.nuevaFiesta.duracion" required >
         </div>
 
         <div class="form-group">
           <label for="">Costo</label>
-          <input class="form-control" type="number" ng-model="vm.nuevaFiesta.costo" min="0" required >
-=======
-          <label for="">Duracion en horas</label>
-          <input class="form-control" type="number" ng-model="vm.nuevaFiesta.duracion" min="0" required >
->>>>>>> Stable
+          <input class="form-control effect6" type="number" ng-model="vm.nuevaFiesta.costo" min="0" required >
         </div>
 
-        <div class="form-group">
-          <label for="">Animador</label>
-<<<<<<< HEAD
-          <input class="form-control" type="text" ng-model="vm.nuevaFiesta.animador" required >
-        </div>
+        
 
 
-
-        <button class="btn btn-primary" type="submit">Registrar</button>
+        <button class="btn buttonall" type="submit">Registrar</button>
 
       </div>
+     
 
     </form>
       <div class="pt-5">
@@ -62,40 +49,8 @@
           </table>
         </div>
       
-
+      </div>
     
  
-=======
-          <select name="dropdown" id="dropdown" ng-model="vm.nuevaFiesta.animador">
-              <option value="">Seleccione su Animador</option>
-              <option ng-repeat="animador in vm.listaAnimador" value="">{{animador.apodo}}</option>
-            </select>
-        </div>
-
-
-        <button class="btn btn-primary" type="submit">Registrar</button>
-      </div>
-      
-      
-
-    </form>
-  </div>
-  <div class="pt-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Duracion en Horas</th>
-          <th>Animador</th>
-          <th>Costo</th>  <!-- Falta calcular el costo total -->
-          
-          
-          
-        </tr>
-      </thead>
-     
-    </table>
-  </div>
->>>>>>> Stable
 </section>
 <div ng-include="'./components/includes/_footer.html'"></div>

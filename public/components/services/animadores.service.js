@@ -36,6 +36,8 @@
           listaAnimador.push(objAnimadores);
         });
       }
+
+      console.log(listaAnimador);
       return listaAnimador;
     }
 

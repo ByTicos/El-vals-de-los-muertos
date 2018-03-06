@@ -17,7 +17,7 @@
    
 
     vm.agregarnuevoMuerto = (pnuevoMuerto) =>{
-     let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno);
+     let objNuevoMuerto = new Muerto (pnuevoMuerto.apodo, pnuevoMuerto.edad, pnuevoMuerto.genero, pnuevoMuerto.tamanno,pnuevoMuerto.fiesta);
 
      servicioUsuarios.addMuerto(objNuevoMuerto);
 
@@ -39,7 +39,7 @@
     vm.agregarFiestaaMuerto = (pMuerto) => {
       console.log(pMuerto);
 
-      $state.go('fiestas', {objMuertoTemp: JSON.stringify(pMuerto)})
+      $state.go('registroFiestas', {objMuertoTemp: pMuerto})
     }
      function listarMuertos() {
       vm.listaMuertos = servicioUsuarios.getMuerto();

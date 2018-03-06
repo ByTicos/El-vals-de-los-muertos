@@ -61,7 +61,7 @@ class Muerto{
   }
 
   registrarFiesta(pFiesta){
-    this.fiesta=pFiesta;
+    this.fiesta.push(pFiesta);
   }
   obtenerNombreUsuario(){
     return this.nombreUsuario;
@@ -75,7 +75,7 @@ class Muerto{
   }
 
   obtenerInfoMuerto(){
-    return this.apodo;
+    return this;
   }
   
 }
@@ -127,7 +127,7 @@ class Lugares {
 class Animadores {
   constructor (pId, pApodo, pCosto) {
     this.id = pId;
-    this.nombre = pApodo;
+    this.apodo = pApodo;
     this.costo = pCosto;
   }
 }
