@@ -9,9 +9,9 @@
   function controladorRegistroEntierro($stateParams,$state,servicioEntierros) {
     let vm = this;
 
+    vm.nuevoEntierro = servicioEntierros.obtenerEntierro();
 
     
-
     vm.nuevoEntierro = {};
 
     listarEntierro();
@@ -23,9 +23,15 @@
 
     
     vm.registrarEntierro = (pnuevoEntierro) =>{
-     
+      console.log(pnuevoEntierro);
+
+    let objNuevoEntierro = angular.fromJson(pnuevoEntierro);
+
 
      let objNuevoEntierro = new Entierro (pnuevoEntierro.fecha, pnuevoEntierro.horaInicio, pnuevoEntierro.horaFin, ppnuevoEntierro.prioridad);
+
+     console.log('objeto con nuevo entierro');
+     console.log(objNuevoEntierro);
 
      servicioUsuarios.addEntierro(objNuevoEntierro);
 
@@ -45,3 +51,5 @@
      
   }
 })(); 
+
+ 
