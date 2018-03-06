@@ -82,7 +82,7 @@
 
       .state('registroEntierros', {
         url: '/entierros',
-        templateUrl: './components/retoques/registroEntierros.view.html',
+        templateUrl: './components/entierros/registroEntierros.view.html',
         data: {
           pageTitle: 'Entierros'
         },
@@ -91,7 +91,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/ent/registroEntierros.controller.js')
+            return $ocLazyLoad.load('./components/entierros/registroEntierros.controller.js')
           }]
         },
         controller: 'controladorRegistroEntierros',
